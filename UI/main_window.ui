@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1158</width>
-    <height>838</height>
+    <width>1011</width>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,7 +168,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_R1"/>
+           <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_R1"/>
           </item>
          </layout>
         </item>
@@ -195,7 +195,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_R2"/>
+           <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_R2"/>
           </item>
          </layout>
         </item>
@@ -222,7 +222,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_H"/>
+           <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_H"/>
           </item>
          </layout>
         </item>
@@ -275,7 +275,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_a_sp"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_a_sp"/>
              </item>
             </layout>
            </item>
@@ -302,7 +302,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_b_sp"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_b_sp"/>
              </item>
             </layout>
            </item>
@@ -338,7 +338,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_a_col"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_a_col"/>
              </item>
             </layout>
            </item>
@@ -365,7 +365,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_b_col"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_b_col"/>
              </item>
             </layout>
            </item>
@@ -401,7 +401,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_a_shp"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_a_shp"/>
              </item>
             </layout>
            </item>
@@ -428,7 +428,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_b_shp"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_b_shp"/>
              </item>
             </layout>
            </item>
@@ -449,7 +449,7 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
-         <widget class="QGroupBox" name="groupBox_7">
+         <widget class="QGroupBox" name="groupBox_spiral">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -467,18 +467,18 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <layout class="QVBoxLayout" name="verticalLayout_spiral">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ex_spiral">
                <item>
-                <widget class="QLabel" name="label_E_x_spiral">
+                <widget class="QLabel" name="label_Ex_spiral">
                  <property name="text">
                   <string>E_x</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_13">
+                <spacer name="horizontalSpacer_Ex_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -494,21 +494,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_x_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ex_spiral"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ey_spiral">
                <item>
-                <widget class="QLabel" name="label_E_y_spiral">
+                <widget class="QLabel" name="label_Ey_spiral">
                  <property name="text">
                   <string>E_y</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_14">
+                <spacer name="horizontalSpacer_Ey_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -524,21 +524,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_y_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ey_spiral"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ez_spiral">
                <item>
-                <widget class="QLabel" name="label_E_z_spiral">
+                <widget class="QLabel" name="label_Ez_spiral">
                  <property name="text">
                   <string>E_z</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_15">
+                <spacer name="horizontalSpacer_Ez_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -554,21 +554,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_z_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ez_spiral"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_16">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxy_spiral">
                <item>
-                <widget class="QLabel" name="label_G_xy_spiral">
+                <widget class="QLabel" name="label_Gxy_spiral">
                  <property name="text">
                   <string>G_xy</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_16">
+                <spacer name="horizontalSpacer_Gxy_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -584,7 +584,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xy_spiral">
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxy_spiral">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -596,16 +596,16 @@
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_17">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gyz_spiral">
                <item>
-                <widget class="QLabel" name="label_G_yz_spiral">
+                <widget class="QLabel" name="label_Gyz_spiral">
                  <property name="text">
                   <string>G_yz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_17">
+                <spacer name="horizontalSpacer_Gyz_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -621,21 +621,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_yz_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gyz_spiral"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxz">
                <item>
-                <widget class="QLabel" name="label_G_xz_spiral">
+                <widget class="QLabel" name="label_Gxz_spiral">
                  <property name="text">
                   <string>G_xz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_18">
+                <spacer name="horizontalSpacer_Gxz_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -651,12 +651,12 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xz_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxz_spiral"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_19">
+              <layout class="QHBoxLayout" name="horizontalLayout_v_spiral">
                <item>
                 <widget class="QLabel" name="label_v_spiral">
                  <property name="text">
@@ -665,7 +665,7 @@
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_19">
+                <spacer name="horizontalSpacer_v_spiral">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -681,7 +681,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_v_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_spiral"/>
                </item>
               </layout>
              </item>
@@ -691,7 +691,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox_9">
+         <widget class="QGroupBox" name="groupBox_shp">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -703,18 +703,18 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_13">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_shp">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_27">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ex_shp">
                <item>
-                <widget class="QLabel" name="label_E_x_shp">
+                <widget class="QLabel" name="label_Ex_shp">
                  <property name="text">
                   <string>E_x</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_27">
+                <spacer name="horizontalSpacer_Ex_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -727,21 +727,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_x_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ex_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_28">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ey_shp">
                <item>
-                <widget class="QLabel" name="label_E_y_shp">
+                <widget class="QLabel" name="label_Ey_shp">
                  <property name="text">
                   <string>E_y</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_28">
+                <spacer name="horizontalSpacer_Ey_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -754,21 +754,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_y_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ey_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_29">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ez_shp">
                <item>
-                <widget class="QLabel" name="label_E_z_shp">
+                <widget class="QLabel" name="label_Ez_shp">
                  <property name="text">
                   <string>E_z</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_29">
+                <spacer name="horizontalSpacer_Ez_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -781,21 +781,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_z_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ez_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_30">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxy_shp">
                <item>
-                <widget class="QLabel" name="label_G_xy_shp">
+                <widget class="QLabel" name="label_Gxy_shp">
                  <property name="text">
                   <string>G_xy</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_30">
+                <spacer name="horizontalSpacer_Gxy_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -808,21 +808,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xy_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxy_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_31">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gyz_shp">
                <item>
-                <widget class="QLabel" name="label_G_yz_shp">
+                <widget class="QLabel" name="label_Gyz_shp">
                  <property name="text">
                   <string>G_yz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_31">
+                <spacer name="horizontalSpacer_Gyz_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -835,21 +835,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_yz_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gyz_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_32">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxz_shp">
                <item>
-                <widget class="QLabel" name="label_G_xz_shp">
+                <widget class="QLabel" name="label_Gxz_shp">
                  <property name="text">
                   <string>G_xz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_33">
+                <spacer name="horizontalSpacer_Gxz_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -862,12 +862,12 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xz_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxz_shp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_33">
+              <layout class="QHBoxLayout" name="horizontalLayout_v_shp">
                <item>
                 <widget class="QLabel" name="label_v_shp">
                  <property name="text">
@@ -876,7 +876,7 @@
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_32">
+                <spacer name="horizontalSpacer_v_shp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -889,7 +889,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_v_shp"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_shp"/>
                </item>
               </layout>
              </item>
@@ -899,7 +899,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox_8">
+         <widget class="QGroupBox" name="groupBox_ring">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -911,18 +911,18 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_16">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <layout class="QVBoxLayout" name="verticalLayout_ring">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_20">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ex_ring">
                <item>
-                <widget class="QLabel" name="label_E_x_ring">
+                <widget class="QLabel" name="label_Ex_ring">
                  <property name="text">
                   <string>E_x</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_20">
+                <spacer name="horizontalSpacer_Ex_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -935,21 +935,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_x_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ex_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_21">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ey_ring">
                <item>
-                <widget class="QLabel" name="label_E_y_ring">
+                <widget class="QLabel" name="label_Ey_ring">
                  <property name="text">
                   <string>E_y</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_21">
+                <spacer name="horizontalSpacer_Ey_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -962,21 +962,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_y_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ey_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ez_ring">
                <item>
-                <widget class="QLabel" name="label_E_z_ring">
+                <widget class="QLabel" name="label_Ez_ring">
                  <property name="text">
                   <string>E_z</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_22">
+                <spacer name="horizontalSpacer_Ez_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -989,21 +989,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_E_z_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ez_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_23">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxy_ring">
                <item>
-                <widget class="QLabel" name="label_G_xy_ring">
+                <widget class="QLabel" name="label_Gxy_ring">
                  <property name="text">
                   <string>G_xy</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_23">
+                <spacer name="horizontalSpacer_Gxy_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -1016,21 +1016,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xy_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxy_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gyz_ring">
                <item>
-                <widget class="QLabel" name="label_G_yz_ring">
+                <widget class="QLabel" name="label_Gyz_ring">
                  <property name="text">
                   <string>G_yz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_24">
+                <spacer name="horizontalSpacer_Gyz_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -1043,21 +1043,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_yz_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gyz_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_25">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxz_ring">
                <item>
-                <widget class="QLabel" name="label_G_xz_ring">
+                <widget class="QLabel" name="label_Gxz_ring">
                  <property name="text">
                   <string>G_xz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_25">
+                <spacer name="horizontalSpacer_Gxz_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -1070,12 +1070,12 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_G_xz_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxz_ring"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_26">
+              <layout class="QHBoxLayout" name="horizontalLayout_v_ring">
                <item>
                 <widget class="QLabel" name="label_v_ring">
                  <property name="text">
@@ -1084,7 +1084,7 @@
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_26">
+                <spacer name="horizontalSpacer_v_ring">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -1097,7 +1097,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_input_v_ring"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_ring"/>
                </item>
               </layout>
              </item>
@@ -1500,7 +1500,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox_N"/>
+           <widget class="SpinBoxQuantity" name="spinBox_N"/>
           </item>
          </layout>
         </item>
@@ -1527,7 +1527,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox_m"/>
+           <widget class="SpinBoxQuantity" name="spinBox_m"/>
           </item>
          </layout>
         </item>
@@ -1554,7 +1554,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox_m_shp"/>
+           <widget class="SpinBoxQuantity" name="spinBox_m_shp"/>
           </item>
          </layout>
         </item>
@@ -1599,6 +1599,21 @@
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_base</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SpinBoxQuantity</class>
+   <extends>QSpinBox</extends>
+   <header>Widgets/SpinBox/spin_box_quantity</header>
+  </customwidget>
+  <customwidget>
+   <class>DoubleSpinBoxGeometry</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>Widgets/DoubleSpinBox/double_spin_box_geometry</header>
+  </customwidget>
+  <customwidget>
+   <class>DoubleSpinBoxMechanical</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>Widgets/DoubleSpinBox/double_spin_box_mechanical</header>
   </customwidget>
  </customwidgets>
  <resources/>

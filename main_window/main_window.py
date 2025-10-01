@@ -15,8 +15,6 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         super().setupUi(main_window)
 
         self.setWindowIcon(QIcon("main_window/Resources/Icons/satellite_icon.png"))
-        self.setup_QSpinBox()
-        self.setup_QDoubleSpinBox()
         self.setup_default_value_for_calculated_parameters()
 
         # карта: окно -> кнопка
@@ -31,113 +29,32 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         self.hide_all_sub_windows()
         self._sub_window_setup_ui()
 
-    def setup_QSpinBox(self):
-
-        # Количество элементов
-        quantity_spinboxes = [
-            self.spinBox_m_shp,
-            self.spinBox_m,
-            self.spinBox_N,
-        ]
-
-        for spinbox in quantity_spinboxes:
-            spinbox.setSuffix(" шт")
-
-    def setup_QDoubleSpinBox(self):
-        """Настройка всех числовых полей с валидацией"""
-        # Валидаторы
-        geometry_validator = QDoubleValidator(0.0, 1e6, 3, self)
-        mechanical_validator = QDoubleValidator(0.0, 1e12, 3, self)
-
-        # Геометрические параметры (метры)
-        geometry_spinboxes = [
-            self.doubleSpinBox_R1,
-            self.doubleSpinBox_R2,
-            self.doubleSpinBox_H,
-            self.doubleSpinBox_a_sp,
-            self.doubleSpinBox_b_sp,
-            self.doubleSpinBox_a_col,
-            self.doubleSpinBox_b_col,
-            self.doubleSpinBox_a_shp,
-            self.doubleSpinBox_b_shp,
-        ]
-
-        for spinbox in geometry_spinboxes:
-            spinbox.lineEdit().setValidator(geometry_validator)
-            spinbox.setDecimals(3)
-            spinbox.setSingleStep(0.001)
-            spinbox.setSuffix(" м")
-
-        # Физико-механические параметры
-        phisical_and_mechanical_spinboxes = [
-            # Спиральная кромка
-            self.doubleSpinBox_E_x_spiral,
-            self.doubleSpinBox_E_y_spiral,
-            self.doubleSpinBox_E_z_spiral,
-            self.doubleSpinBox_G_xy_spiral,
-            self.doubleSpinBox_G_yz_spiral,
-            self.doubleSpinBox_G_xz_spiral,
-            self.doubleSpinBox_v_spiral,
-
-            # Кольцевая кромка
-            self.doubleSpinBox_E_x_ring,
-            self.doubleSpinBox_E_y_ring,
-            self.doubleSpinBox_E_z_ring,
-            self.doubleSpinBox_G_xy_ring,
-            self.doubleSpinBox_G_yz_ring,
-            self.doubleSpinBox_G_xz_ring,
-            self.doubleSpinBox_v_ring,
-
-            # Шпангоуты
-            self.doubleSpinBox_E_x_shp,
-            self.doubleSpinBox_E_y_shp,
-            self.doubleSpinBox_E_z_shp,
-            self.doubleSpinBox_G_xy_shp,
-            self.doubleSpinBox_G_yz_shp,
-            self.doubleSpinBox_G_xz_shp,
-            self.doubleSpinBox_v_shp,
-        ]
-
-        for spinbox in phisical_and_mechanical_spinboxes:
-            spinbox.lineEdit().setValidator(mechanical_validator)
-            spinbox.setDecimals(3)
-            spinbox.setSingleStep(0.001)
-
-            # Специальная обработка коэффициента Пуассона
-            if "v_" in spinbox.objectName():
-                spinbox.setSuffix("")
-                spinbox.setRange(0.0, 0.5)
-                spinbox.setSingleStep(0.001)
-            else:
-                spinbox.setSuffix(" Па")
-                spinbox.setRange(0.0, 1e12)  # До 1 триллиона Па doubleSpinBox_input_v_shp,
-
     def setup_default_value_for_calculated_parameters(self):
-        self.ui.label_value_M_1.setText("Не рассчитано")
-        self.ui.label_value_M_2.setText("Не рассчитано")
-        self.ui.label_value_M_3.setText("Не рассчитано")
-        self.ui.label_value_M_4.setText("Не рассчитано")
-        self.ui.label_value_M_1.setStyleSheet("color: red;")
-        self.ui.label_value_M_2.setStyleSheet("color: red;")
-        self.ui.label_value_M_3.setStyleSheet("color: red;")
-        self.ui.label_value_M_4.setStyleSheet("color: red;")
+        self.label_value_M1.setText("Не рассчитано")
+        self.label_value_M2.setText("Не рассчитано")
+        self.label_value_M3.setText("Не рассчитано")
+        self.label_value_M4.setText("Не рассчитано")
+        self.label_value_M1.setStyleSheet("color: red;")
+        self.label_value_M2.setStyleSheet("color: red;")
+        self.label_value_M3.setStyleSheet("color: red;")
+        self.label_value_M4.setStyleSheet("color: red;")
 
-        self.ui.label_value_V_1.setText("Не рассчитано")
-        self.ui.label_value_V_2.setText("Не рассчитано")
-        self.ui.label_value_V_3.setText("Не рассчитано")
-        self.ui.label_value_V_4.setText("Не рассчитано")
-        self.ui.label_value_V_1.setStyleSheet("color: red;")
-        self.ui.label_value_V_2.setStyleSheet("color: red;")
-        self.ui.label_value_V_3.setStyleSheet("color: red;")
-        self.ui.label_value_V_4.setStyleSheet("color: red;")
+        self.label_value_V1.setText("Не рассчитано")
+        self.label_value_V2.setText("Не рассчитано")
+        self.label_value_V3.setText("Не рассчитано")
+        self.label_value_V4.setText("Не рассчитано")
+        self.label_value_V1.setStyleSheet("color: red;")
+        self.label_value_V2.setStyleSheet("color: red;")
+        self.label_value_V3.setStyleSheet("color: red;")
+        self.label_value_V4.setStyleSheet("color: red;")
 
-        self.ui.label_value_p_1.setText("Не рассчитано")
-        self.ui.label_value_p_2.setText("Не рассчитано")
-        self.ui.label_value_p_1.setStyleSheet("color: red;")
-        self.ui.label_value_p_2.setStyleSheet("color: red;")
+        self.label_value_p1.setText("Не рассчитано")
+        self.label_value_p2.setText("Не рассчитано")
+        self.label_value_p1.setStyleSheet("color: red;")
+        self.label_value_p2.setStyleSheet("color: red;")
 
-        self.ui.label_value_M.setText("Не рассчитано")
-        self.ui.label_value_M.setStyleSheet("color: red;")
+        self.label_value_M.setText("Не рассчитано")
+        self.label_value_M.setStyleSheet("color: red;")
 
     def set_sub_window_visible(self, sub_window: SubWindowBase, visible: bool):
         """
