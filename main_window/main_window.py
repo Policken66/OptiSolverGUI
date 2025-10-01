@@ -1,4 +1,5 @@
 from PySide6.QtCore import QRegularExpression
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMainWindow, QWidget, QMdiSubWindow
 
 from UI.main_window import Ui_MainWindow
@@ -13,6 +14,8 @@ class MainWindow(Ui_MainWindow, QMainWindow):
     def setupUi(self, main_window):
         super().setupUi(main_window)
 
+        self.setWindowIcon(QIcon("main_window/Resources/Icons/satellite_icon.png"))
+
         # карта: окно -> кнопка
         self.sub_to_btn = self.collect_sub_to_btn()
 
@@ -23,7 +26,6 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             sub.hide_sub_window_signal.connect(lambda s=sub: self._on_request_hide(s))
 
         self.hide_all_sub_windows()
-
         self._sub_window_setup_ui()
 
     def set_sub_window_visible(self, sub_window: SubWindowBase, visible: bool):

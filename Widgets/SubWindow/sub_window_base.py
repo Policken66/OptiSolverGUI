@@ -1,4 +1,5 @@
 from PySide6.QtCore import Signal
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QWidget
 
 
@@ -7,6 +8,7 @@ class SubWindowBase(QWidget):
 
     def __init__(self):
         super().__init__()
+        self.setWindowIcon(QIcon("Widgets/SubWindow/Resources/Icons/parameters_icon.png"))
 
     def closeEvent(self, event):
         event.ignore()
