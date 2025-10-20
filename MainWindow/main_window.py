@@ -107,11 +107,12 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         :return: Словарь {SubWindowBase: QPushButton}.
         """
         return {
-            self.subWindow_geometric_parameters: self.pushButton_geometric_parameters,
-            self.subWindow_construction_parameters: self.pushButton_construction_parameters,
-            self.subWindow_physical_mechanical_parameters: self.pushButton_physical_mechanical_parameters,
-            self.subWindow_edge_structure_parameters: self.pushButton_edge_structure_parameters,
-            self.subWindow_calculated_parameters: self.pushButton_calculated_peremeters,
+            self.subWindow_geometric_params: self.pushButton_geometric_params,
+            self.subWindow_construction_params: self.pushButton_construction_params,
+            self.subWindow_physical_mechanical_params: self.pushButton_physical_mechanical_params,
+            self.subWindow_edge_structure_params: self.pushButton_edge_structure_params,
+            self.subWindow_calculated_params: self.pushButton_calculated_params,
+            self.subWindow_generator: self.pushButton_generator,
         }
 
     def _sub_window_setup_ui(self):

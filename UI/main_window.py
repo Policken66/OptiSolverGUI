@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.3
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,12 +24,13 @@ from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
 from Widgets.SpinBox.spin_box_quantity import SpinBoxQuantity
 from Widgets.SubWindow.sub_window_base import SubWindowBase
+from Widgets.SubWindow.sub_window_calculated_params import SubWindowCalculatedParams
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1011, 767)
+        MainWindow.resize(1017, 792)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -44,48 +45,60 @@ class Ui_MainWindow(object):
         self.mdiArea_toolbox.setMaximumSize(QSize(16777215, 75))
         self.mdiArea_toolbox.setViewMode(QMdiArea.ViewMode.TabbedView)
         self.mdiArea_toolbox.setTabsMovable(True)
-        self.subWindow_parameters_toolbox = QWidget()
-        self.subWindow_parameters_toolbox.setObjectName(u"subWindow_parameters_toolbox")
-        self.horizontalLayout = QHBoxLayout(self.subWindow_parameters_toolbox)
+        self.subWindow_params_toolbox = QWidget()
+        self.subWindow_params_toolbox.setObjectName(u"subWindow_params_toolbox")
+        self.horizontalLayout = QHBoxLayout(self.subWindow_params_toolbox)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.pushButton_geometric_parameters = QPushButton(self.subWindow_parameters_toolbox)
-        self.pushButton_geometric_parameters.setObjectName(u"pushButton_geometric_parameters")
-        self.pushButton_geometric_parameters.setCheckable(True)
+        self.pushButton_geometric_params = QPushButton(self.subWindow_params_toolbox)
+        self.pushButton_geometric_params.setObjectName(u"pushButton_geometric_params")
+        self.pushButton_geometric_params.setCheckable(True)
 
-        self.horizontalLayout.addWidget(self.pushButton_geometric_parameters)
+        self.horizontalLayout.addWidget(self.pushButton_geometric_params)
 
-        self.pushButton_physical_mechanical_parameters = QPushButton(self.subWindow_parameters_toolbox)
-        self.pushButton_physical_mechanical_parameters.setObjectName(u"pushButton_physical_mechanical_parameters")
-        self.pushButton_physical_mechanical_parameters.setCheckable(True)
+        self.pushButton_physical_mechanical_params = QPushButton(self.subWindow_params_toolbox)
+        self.pushButton_physical_mechanical_params.setObjectName(u"pushButton_physical_mechanical_params")
+        self.pushButton_physical_mechanical_params.setCheckable(True)
 
-        self.horizontalLayout.addWidget(self.pushButton_physical_mechanical_parameters)
+        self.horizontalLayout.addWidget(self.pushButton_physical_mechanical_params)
 
-        self.pushButton_edge_structure_parameters = QPushButton(self.subWindow_parameters_toolbox)
-        self.pushButton_edge_structure_parameters.setObjectName(u"pushButton_edge_structure_parameters")
-        self.pushButton_edge_structure_parameters.setCheckable(True)
+        self.pushButton_edge_structure_params = QPushButton(self.subWindow_params_toolbox)
+        self.pushButton_edge_structure_params.setObjectName(u"pushButton_edge_structure_params")
+        self.pushButton_edge_structure_params.setCheckable(True)
 
-        self.horizontalLayout.addWidget(self.pushButton_edge_structure_parameters)
+        self.horizontalLayout.addWidget(self.pushButton_edge_structure_params)
 
-        self.pushButton_construction_parameters = QPushButton(self.subWindow_parameters_toolbox)
-        self.pushButton_construction_parameters.setObjectName(u"pushButton_construction_parameters")
-        self.pushButton_construction_parameters.setCheckable(True)
+        self.pushButton_construction_params = QPushButton(self.subWindow_params_toolbox)
+        self.pushButton_construction_params.setObjectName(u"pushButton_construction_params")
+        self.pushButton_construction_params.setCheckable(True)
 
-        self.horizontalLayout.addWidget(self.pushButton_construction_parameters)
+        self.horizontalLayout.addWidget(self.pushButton_construction_params)
 
-        self.pushButton_calculated_peremeters = QPushButton(self.subWindow_parameters_toolbox)
-        self.pushButton_calculated_peremeters.setObjectName(u"pushButton_calculated_peremeters")
-        self.pushButton_calculated_peremeters.setCheckable(True)
+        self.pushButton_calculated_params = QPushButton(self.subWindow_params_toolbox)
+        self.pushButton_calculated_params.setObjectName(u"pushButton_calculated_params")
+        self.pushButton_calculated_params.setCheckable(True)
 
-        self.horizontalLayout.addWidget(self.pushButton_calculated_peremeters)
+        self.horizontalLayout.addWidget(self.pushButton_calculated_params)
 
         self.horizontalSpacer_parameters_toolbox = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_parameters_toolbox)
 
-        self.mdiArea_toolbox.addSubWindow(self.subWindow_parameters_toolbox)
-        self.subwindow_4 = QWidget()
-        self.subwindow_4.setObjectName(u"subwindow_4")
-        self.mdiArea_toolbox.addSubWindow(self.subwindow_4)
+        self.mdiArea_toolbox.addSubWindow(self.subWindow_params_toolbox)
+        self.subWindow_prepare_solver = QWidget()
+        self.subWindow_prepare_solver.setObjectName(u"subWindow_prepare_solver")
+        self.horizontalLayout_2 = QHBoxLayout(self.subWindow_prepare_solver)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.pushButton_generator = QPushButton(self.subWindow_prepare_solver)
+        self.pushButton_generator.setObjectName(u"pushButton_generator")
+        self.pushButton_generator.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_generator)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.mdiArea_toolbox.addSubWindow(self.subWindow_prepare_solver)
         self.subwindow_5 = QWidget()
         self.subwindow_5.setObjectName(u"subwindow_5")
         self.mdiArea_toolbox.addSubWindow(self.subwindow_5)
@@ -102,14 +115,14 @@ class Ui_MainWindow(object):
         self.mdiArea.setViewMode(QMdiArea.ViewMode.SubWindowView)
         self.mdiArea.setDocumentMode(True)
         self.mdiArea.setTabsClosable(False)
-        self.subWindow_geometric_parameters = SubWindowBase()
-        self.subWindow_geometric_parameters.setObjectName(u"subWindow_geometric_parameters")
-        self.subWindow_geometric_parameters.setMinimumSize(QSize(300, 0))
-        self.verticalLayout_15 = QVBoxLayout(self.subWindow_geometric_parameters)
+        self.subWindow_geometric_params = SubWindowBase()
+        self.subWindow_geometric_params.setObjectName(u"subWindow_geometric_params")
+        self.subWindow_geometric_params.setMinimumSize(QSize(300, 0))
+        self.verticalLayout_15 = QVBoxLayout(self.subWindow_geometric_params)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.horizontalLayout_R1 = QHBoxLayout()
         self.horizontalLayout_R1.setObjectName(u"horizontalLayout_R1")
-        self.label_R1 = QLabel(self.subWindow_geometric_parameters)
+        self.label_R1 = QLabel(self.subWindow_geometric_params)
         self.label_R1.setObjectName(u"label_R1")
 
         self.horizontalLayout_R1.addWidget(self.label_R1)
@@ -118,7 +131,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_R1.addItem(self.horizontalSpacer_R1)
 
-        self.doubleSpinBox_R1 = DoubleSpinBoxGeometry(self.subWindow_geometric_parameters)
+        self.doubleSpinBox_R1 = DoubleSpinBoxGeometry(self.subWindow_geometric_params)
         self.doubleSpinBox_R1.setObjectName(u"doubleSpinBox_R1")
 
         self.horizontalLayout_R1.addWidget(self.doubleSpinBox_R1)
@@ -128,7 +141,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_R2 = QHBoxLayout()
         self.horizontalLayout_R2.setObjectName(u"horizontalLayout_R2")
-        self.label_R2 = QLabel(self.subWindow_geometric_parameters)
+        self.label_R2 = QLabel(self.subWindow_geometric_params)
         self.label_R2.setObjectName(u"label_R2")
 
         self.horizontalLayout_R2.addWidget(self.label_R2)
@@ -137,7 +150,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_R2.addItem(self.horizontalSpacer_R2)
 
-        self.doubleSpinBox_R2 = DoubleSpinBoxGeometry(self.subWindow_geometric_parameters)
+        self.doubleSpinBox_R2 = DoubleSpinBoxGeometry(self.subWindow_geometric_params)
         self.doubleSpinBox_R2.setObjectName(u"doubleSpinBox_R2")
 
         self.horizontalLayout_R2.addWidget(self.doubleSpinBox_R2)
@@ -147,7 +160,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_H = QHBoxLayout()
         self.horizontalLayout_H.setObjectName(u"horizontalLayout_H")
-        self.label_H = QLabel(self.subWindow_geometric_parameters)
+        self.label_H = QLabel(self.subWindow_geometric_params)
         self.label_H.setObjectName(u"label_H")
 
         self.horizontalLayout_H.addWidget(self.label_H)
@@ -156,7 +169,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_H.addItem(self.horizontalSpacer_H)
 
-        self.doubleSpinBox_H = DoubleSpinBoxGeometry(self.subWindow_geometric_parameters)
+        self.doubleSpinBox_H = DoubleSpinBoxGeometry(self.subWindow_geometric_params)
         self.doubleSpinBox_H.setObjectName(u"doubleSpinBox_H")
 
         self.horizontalLayout_H.addWidget(self.doubleSpinBox_H)
@@ -164,18 +177,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_15.addLayout(self.horizontalLayout_H)
 
-        self.label_geometric_params_model = QLabel(self.subWindow_geometric_parameters)
+        self.label_geometric_params_model = QLabel(self.subWindow_geometric_params)
         self.label_geometric_params_model.setObjectName(u"label_geometric_params_model")
 
         self.verticalLayout_15.addWidget(self.label_geometric_params_model)
 
-        self.mdiArea.addSubWindow(self.subWindow_geometric_parameters)
-        self.subWindow_edge_structure_parameters = SubWindowBase()
-        self.subWindow_edge_structure_parameters.setObjectName(u"subWindow_edge_structure_parameters")
-        self.subWindow_edge_structure_parameters.setMinimumSize(QSize(320, 0))
-        self.verticalLayout_11 = QVBoxLayout(self.subWindow_edge_structure_parameters)
+        self.mdiArea.addSubWindow(self.subWindow_geometric_params)
+        self.subWindow_edge_structure_params = SubWindowBase()
+        self.subWindow_edge_structure_params.setObjectName(u"subWindow_edge_structure_params")
+        self.subWindow_edge_structure_params.setMinimumSize(QSize(320, 0))
+        self.verticalLayout_11 = QVBoxLayout(self.subWindow_edge_structure_params)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.groupBox_a_b_sp = QGroupBox(self.subWindow_edge_structure_parameters)
+        self.groupBox_a_b_sp = QGroupBox(self.subWindow_edge_structure_params)
         self.groupBox_a_b_sp.setObjectName(u"groupBox_a_b_sp")
         self.verticalLayout_10 = QVBoxLayout(self.groupBox_a_b_sp)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
@@ -220,7 +233,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.groupBox_a_b_sp)
 
-        self.groupBox_a_b_col = QGroupBox(self.subWindow_edge_structure_parameters)
+        self.groupBox_a_b_col = QGroupBox(self.subWindow_edge_structure_params)
         self.groupBox_a_b_col.setObjectName(u"groupBox_a_b_col")
         self.verticalLayout_18 = QVBoxLayout(self.groupBox_a_b_col)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
@@ -265,7 +278,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.groupBox_a_b_col)
 
-        self.groupBox_a_b_shp = QGroupBox(self.subWindow_edge_structure_parameters)
+        self.groupBox_a_b_shp = QGroupBox(self.subWindow_edge_structure_params)
         self.groupBox_a_b_shp.setObjectName(u"groupBox_a_b_shp")
         self.verticalLayout_19 = QVBoxLayout(self.groupBox_a_b_shp)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
@@ -310,13 +323,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.groupBox_a_b_shp)
 
-        self.mdiArea.addSubWindow(self.subWindow_edge_structure_parameters)
-        self.subWindow_physical_mechanical_parameters = SubWindowBase()
-        self.subWindow_physical_mechanical_parameters.setObjectName(u"subWindow_physical_mechanical_parameters")
-        self.subWindow_physical_mechanical_parameters.setMinimumSize(QSize(450, 0))
-        self.horizontalLayout_6 = QHBoxLayout(self.subWindow_physical_mechanical_parameters)
+        self.mdiArea.addSubWindow(self.subWindow_edge_structure_params)
+        self.subWindow_physical_mechanical_params = SubWindowBase()
+        self.subWindow_physical_mechanical_params.setObjectName(u"subWindow_physical_mechanical_params")
+        self.subWindow_physical_mechanical_params.setMinimumSize(QSize(450, 0))
+        self.horizontalLayout_6 = QHBoxLayout(self.subWindow_physical_mechanical_params)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.groupBox_spiral = QGroupBox(self.subWindow_physical_mechanical_parameters)
+        self.groupBox_spiral = QGroupBox(self.subWindow_physical_mechanical_params)
         self.groupBox_spiral.setObjectName(u"groupBox_spiral")
         sizePolicy1.setHeightForWidth(self.groupBox_spiral.sizePolicy().hasHeightForWidth())
         self.groupBox_spiral.setSizePolicy(sizePolicy1)
@@ -469,7 +482,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.groupBox_spiral)
 
-        self.groupBox_shp = QGroupBox(self.subWindow_physical_mechanical_parameters)
+        self.groupBox_shp = QGroupBox(self.subWindow_physical_mechanical_params)
         self.groupBox_shp.setObjectName(u"groupBox_shp")
         sizePolicy.setHeightForWidth(self.groupBox_shp.sizePolicy().hasHeightForWidth())
         self.groupBox_shp.setSizePolicy(sizePolicy)
@@ -616,7 +629,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.groupBox_shp)
 
-        self.groupBox_ring = QGroupBox(self.subWindow_physical_mechanical_parameters)
+        self.groupBox_ring = QGroupBox(self.subWindow_physical_mechanical_params)
         self.groupBox_ring.setObjectName(u"groupBox_ring")
         sizePolicy.setHeightForWidth(self.groupBox_ring.sizePolicy().hasHeightForWidth())
         self.groupBox_ring.setSizePolicy(sizePolicy)
@@ -763,17 +776,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.groupBox_ring)
 
-        self.mdiArea.addSubWindow(self.subWindow_physical_mechanical_parameters)
-        self.subWindow_calculated_parameters = SubWindowBase()
-        self.subWindow_calculated_parameters.setObjectName(u"subWindow_calculated_parameters")
-        self.subWindow_calculated_parameters.setMinimumSize(QSize(280, 0))
-        self.verticalLayout_7 = QVBoxLayout(self.subWindow_calculated_parameters)
+        self.mdiArea.addSubWindow(self.subWindow_physical_mechanical_params)
+        self.subWindow_calculated_params = SubWindowCalculatedParams()
+        self.subWindow_calculated_params.setObjectName(u"subWindow_calculated_params")
+        self.subWindow_calculated_params.setMinimumSize(QSize(280, 0))
+        self.verticalLayout_7 = QVBoxLayout(self.subWindow_calculated_params)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_calculated_parameters = QVBoxLayout()
-        self.verticalLayout_calculated_parameters.setObjectName(u"verticalLayout_calculated_parameters")
+        self.verticalLayout_calculated_params = QVBoxLayout()
+        self.verticalLayout_calculated_params.setObjectName(u"verticalLayout_calculated_params")
         self.horizontalLayout_M1 = QHBoxLayout()
         self.horizontalLayout_M1.setObjectName(u"horizontalLayout_M1")
-        self.label_M1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_M1 = QLabel(self.subWindow_calculated_params)
         self.label_M1.setObjectName(u"label_M1")
 
         self.horizontalLayout_M1.addWidget(self.label_M1)
@@ -782,17 +795,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_M1.addItem(self.horizontalSpacer_M1)
 
-        self.label_value_M1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_M1 = QLabel(self.subWindow_calculated_params)
         self.label_value_M1.setObjectName(u"label_value_M1")
 
         self.horizontalLayout_M1.addWidget(self.label_value_M1)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_M1)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_M1)
 
         self.horizontalLayout_M2 = QHBoxLayout()
         self.horizontalLayout_M2.setObjectName(u"horizontalLayout_M2")
-        self.label_M2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_M2 = QLabel(self.subWindow_calculated_params)
         self.label_M2.setObjectName(u"label_M2")
 
         self.horizontalLayout_M2.addWidget(self.label_M2)
@@ -801,17 +814,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_M2.addItem(self.horizontalSpacer_M2)
 
-        self.label_value_M2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_M2 = QLabel(self.subWindow_calculated_params)
         self.label_value_M2.setObjectName(u"label_value_M2")
 
         self.horizontalLayout_M2.addWidget(self.label_value_M2)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_M2)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_M2)
 
         self.horizontalLayout_M3 = QHBoxLayout()
         self.horizontalLayout_M3.setObjectName(u"horizontalLayout_M3")
-        self.label_M3 = QLabel(self.subWindow_calculated_parameters)
+        self.label_M3 = QLabel(self.subWindow_calculated_params)
         self.label_M3.setObjectName(u"label_M3")
 
         self.horizontalLayout_M3.addWidget(self.label_M3)
@@ -820,17 +833,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_M3.addItem(self.horizontalSpacer_M3)
 
-        self.label_value_M3 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_M3 = QLabel(self.subWindow_calculated_params)
         self.label_value_M3.setObjectName(u"label_value_M3")
 
         self.horizontalLayout_M3.addWidget(self.label_value_M3)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_M3)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_M3)
 
         self.horizontalLayout_M4 = QHBoxLayout()
         self.horizontalLayout_M4.setObjectName(u"horizontalLayout_M4")
-        self.label_M4 = QLabel(self.subWindow_calculated_parameters)
+        self.label_M4 = QLabel(self.subWindow_calculated_params)
         self.label_M4.setObjectName(u"label_M4")
 
         self.horizontalLayout_M4.addWidget(self.label_M4)
@@ -839,17 +852,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_M4.addItem(self.horizontalSpacer_M4)
 
-        self.label_value_M4 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_M4 = QLabel(self.subWindow_calculated_params)
         self.label_value_M4.setObjectName(u"label_value_M4")
 
         self.horizontalLayout_M4.addWidget(self.label_value_M4)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_M4)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_M4)
 
         self.horizontalLayout_M = QHBoxLayout()
         self.horizontalLayout_M.setObjectName(u"horizontalLayout_M")
-        self.label_M = QLabel(self.subWindow_calculated_parameters)
+        self.label_M = QLabel(self.subWindow_calculated_params)
         self.label_M.setObjectName(u"label_M")
 
         self.horizontalLayout_M.addWidget(self.label_M)
@@ -858,17 +871,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_M.addItem(self.horizontalSpacer_M)
 
-        self.label_value_M = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_M = QLabel(self.subWindow_calculated_params)
         self.label_value_M.setObjectName(u"label_value_M")
 
         self.horizontalLayout_M.addWidget(self.label_value_M)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_M)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_M)
 
         self.horizontalLayout_V1 = QHBoxLayout()
         self.horizontalLayout_V1.setObjectName(u"horizontalLayout_V1")
-        self.label_V1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_V1 = QLabel(self.subWindow_calculated_params)
         self.label_V1.setObjectName(u"label_V1")
 
         self.horizontalLayout_V1.addWidget(self.label_V1)
@@ -877,17 +890,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_V1.addItem(self.horizontalSpacer_V1)
 
-        self.label_value_V1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_V1 = QLabel(self.subWindow_calculated_params)
         self.label_value_V1.setObjectName(u"label_value_V1")
 
         self.horizontalLayout_V1.addWidget(self.label_value_V1)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_V1)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_V1)
 
         self.horizontalLayout_V2 = QHBoxLayout()
         self.horizontalLayout_V2.setObjectName(u"horizontalLayout_V2")
-        self.label_V2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_V2 = QLabel(self.subWindow_calculated_params)
         self.label_V2.setObjectName(u"label_V2")
 
         self.horizontalLayout_V2.addWidget(self.label_V2)
@@ -896,17 +909,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_V2.addItem(self.horizontalSpacer_V2)
 
-        self.label_value_V2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_V2 = QLabel(self.subWindow_calculated_params)
         self.label_value_V2.setObjectName(u"label_value_V2")
 
         self.horizontalLayout_V2.addWidget(self.label_value_V2)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_V2)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_V2)
 
         self.horizontalLayout_V3 = QHBoxLayout()
         self.horizontalLayout_V3.setObjectName(u"horizontalLayout_V3")
-        self.label_V3 = QLabel(self.subWindow_calculated_parameters)
+        self.label_V3 = QLabel(self.subWindow_calculated_params)
         self.label_V3.setObjectName(u"label_V3")
 
         self.horizontalLayout_V3.addWidget(self.label_V3)
@@ -915,17 +928,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_V3.addItem(self.horizontalSpacer_V3)
 
-        self.label_value_V3 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_V3 = QLabel(self.subWindow_calculated_params)
         self.label_value_V3.setObjectName(u"label_value_V3")
 
         self.horizontalLayout_V3.addWidget(self.label_value_V3)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_V3)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_V3)
 
         self.horizontalLayout_V4 = QHBoxLayout()
         self.horizontalLayout_V4.setObjectName(u"horizontalLayout_V4")
-        self.label_V4 = QLabel(self.subWindow_calculated_parameters)
+        self.label_V4 = QLabel(self.subWindow_calculated_params)
         self.label_V4.setObjectName(u"label_V4")
 
         self.horizontalLayout_V4.addWidget(self.label_V4)
@@ -934,17 +947,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_V4.addItem(self.horizontalSpacer_V4)
 
-        self.label_value_V4 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_V4 = QLabel(self.subWindow_calculated_params)
         self.label_value_V4.setObjectName(u"label_value_V4")
 
         self.horizontalLayout_V4.addWidget(self.label_value_V4)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_V4)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_V4)
 
         self.horizontalLayout_p1 = QHBoxLayout()
         self.horizontalLayout_p1.setObjectName(u"horizontalLayout_p1")
-        self.label_p1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_p1 = QLabel(self.subWindow_calculated_params)
         self.label_p1.setObjectName(u"label_p1")
 
         self.horizontalLayout_p1.addWidget(self.label_p1)
@@ -953,17 +966,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_p1.addItem(self.horizontalSpacer_p1)
 
-        self.label_value_p1 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_p1 = QLabel(self.subWindow_calculated_params)
         self.label_value_p1.setObjectName(u"label_value_p1")
 
         self.horizontalLayout_p1.addWidget(self.label_value_p1)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_p1)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_p1)
 
         self.horizontalLayout_p2 = QHBoxLayout()
         self.horizontalLayout_p2.setObjectName(u"horizontalLayout_p2")
-        self.label_p2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_p2 = QLabel(self.subWindow_calculated_params)
         self.label_p2.setObjectName(u"label_p2")
 
         self.horizontalLayout_p2.addWidget(self.label_p2)
@@ -972,26 +985,26 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_p2.addItem(self.horizontalSpacer_p2)
 
-        self.label_value_p2 = QLabel(self.subWindow_calculated_parameters)
+        self.label_value_p2 = QLabel(self.subWindow_calculated_params)
         self.label_value_p2.setObjectName(u"label_value_p2")
 
         self.horizontalLayout_p2.addWidget(self.label_value_p2)
 
 
-        self.verticalLayout_calculated_parameters.addLayout(self.horizontalLayout_p2)
+        self.verticalLayout_calculated_params.addLayout(self.horizontalLayout_p2)
 
 
-        self.verticalLayout_7.addLayout(self.verticalLayout_calculated_parameters)
+        self.verticalLayout_7.addLayout(self.verticalLayout_calculated_params)
 
-        self.mdiArea.addSubWindow(self.subWindow_calculated_parameters)
-        self.subWindow_construction_parameters = SubWindowBase()
-        self.subWindow_construction_parameters.setObjectName(u"subWindow_construction_parameters")
-        self.subWindow_construction_parameters.setMinimumSize(QSize(330, 0))
-        self.verticalLayout_9 = QVBoxLayout(self.subWindow_construction_parameters)
+        self.mdiArea.addSubWindow(self.subWindow_calculated_params)
+        self.subWindow_construction_params = SubWindowBase()
+        self.subWindow_construction_params.setObjectName(u"subWindow_construction_params")
+        self.subWindow_construction_params.setMinimumSize(QSize(330, 0))
+        self.verticalLayout_9 = QVBoxLayout(self.subWindow_construction_params)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.horizontalLayout_N = QHBoxLayout()
         self.horizontalLayout_N.setObjectName(u"horizontalLayout_N")
-        self.label_N = QLabel(self.subWindow_construction_parameters)
+        self.label_N = QLabel(self.subWindow_construction_params)
         self.label_N.setObjectName(u"label_N")
 
         self.horizontalLayout_N.addWidget(self.label_N)
@@ -1000,7 +1013,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_N.addItem(self.horizontalSpacer_N)
 
-        self.spinBox_N = SpinBoxQuantity(self.subWindow_construction_parameters)
+        self.spinBox_N = SpinBoxQuantity(self.subWindow_construction_params)
         self.spinBox_N.setObjectName(u"spinBox_N")
 
         self.horizontalLayout_N.addWidget(self.spinBox_N)
@@ -1010,7 +1023,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_m = QHBoxLayout()
         self.horizontalLayout_m.setObjectName(u"horizontalLayout_m")
-        self.label_m = QLabel(self.subWindow_construction_parameters)
+        self.label_m = QLabel(self.subWindow_construction_params)
         self.label_m.setObjectName(u"label_m")
 
         self.horizontalLayout_m.addWidget(self.label_m)
@@ -1019,7 +1032,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_m.addItem(self.horizontalSpacer_m)
 
-        self.spinBox_m = SpinBoxQuantity(self.subWindow_construction_parameters)
+        self.spinBox_m = SpinBoxQuantity(self.subWindow_construction_params)
         self.spinBox_m.setObjectName(u"spinBox_m")
 
         self.horizontalLayout_m.addWidget(self.spinBox_m)
@@ -1029,7 +1042,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_m_shp = QHBoxLayout()
         self.horizontalLayout_m_shp.setObjectName(u"horizontalLayout_m_shp")
-        self.label_m_shp = QLabel(self.subWindow_construction_parameters)
+        self.label_m_shp = QLabel(self.subWindow_construction_params)
         self.label_m_shp.setObjectName(u"label_m_shp")
 
         self.horizontalLayout_m_shp.addWidget(self.label_m_shp)
@@ -1038,7 +1051,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_m_shp.addItem(self.horizontalSpacer_m_shp)
 
-        self.spinBox_m_shp = SpinBoxQuantity(self.subWindow_construction_parameters)
+        self.spinBox_m_shp = SpinBoxQuantity(self.subWindow_construction_params)
         self.spinBox_m_shp.setObjectName(u"spinBox_m_shp")
 
         self.horizontalLayout_m_shp.addWidget(self.spinBox_m_shp)
@@ -1048,7 +1061,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_alp = QHBoxLayout()
         self.horizontalLayout_alp.setObjectName(u"horizontalLayout_alp")
-        self.label_alp = QLabel(self.subWindow_construction_parameters)
+        self.label_alp = QLabel(self.subWindow_construction_params)
         self.label_alp.setObjectName(u"label_alp")
 
         self.horizontalLayout_alp.addWidget(self.label_alp)
@@ -1057,7 +1070,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_alp.addItem(self.horizontalSpacer_alp)
 
-        self.doubleSpinBox_alp = QDoubleSpinBox(self.subWindow_construction_parameters)
+        self.doubleSpinBox_alp = QDoubleSpinBox(self.subWindow_construction_params)
         self.doubleSpinBox_alp.setObjectName(u"doubleSpinBox_alp")
 
         self.horizontalLayout_alp.addWidget(self.doubleSpinBox_alp)
@@ -1065,7 +1078,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addLayout(self.horizontalLayout_alp)
 
-        self.mdiArea.addSubWindow(self.subWindow_construction_parameters)
+        self.mdiArea.addSubWindow(self.subWindow_construction_params)
+        self.subWindow_generator = SubWindowBase()
+        self.subWindow_generator.setObjectName(u"subWindow_generator")
+        self.verticalLayout_2 = QVBoxLayout(self.subWindow_generator)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.pushButton_start_generation = QPushButton(self.subWindow_generator)
+        self.pushButton_start_generation.setObjectName(u"pushButton_start_generation")
+
+        self.verticalLayout_2.addWidget(self.pushButton_start_generation)
+
+        self.mdiArea.addSubWindow(self.subWindow_generator)
 
         self.verticalLayout.addWidget(self.mdiArea)
 
@@ -1081,20 +1104,21 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"OptiSolver", None))
-        self.subWindow_parameters_toolbox.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
-        self.pushButton_geometric_parameters.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
-        self.pushButton_physical_mechanical_parameters.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437\u0438\u043a\u043e-\u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438", None))
-        self.pushButton_edge_structure_parameters.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0440\u0435\u0431\u0435\u0440\u043d\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b", None))
-        self.pushButton_construction_parameters.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0438\u0441\u0445\u043e\u0434\u043d\u043e\u0439 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
-        self.pushButton_calculated_peremeters.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
-        self.subwindow_4.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0440\u0435\u0448\u0435\u043d\u0438\u044f", None))
+        self.subWindow_params_toolbox.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.pushButton_geometric_params.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.pushButton_physical_mechanical_params.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437\u0438\u043a\u043e-\u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438", None))
+        self.pushButton_edge_structure_params.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0440\u0435\u0431\u0435\u0440\u043d\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b", None))
+        self.pushButton_construction_params.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0438\u0441\u0445\u043e\u0434\u043d\u043e\u0439 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
+        self.pushButton_calculated_params.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.subWindow_prepare_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0440\u0435\u0448\u0435\u043d\u0438\u044f", None))
+        self.pushButton_generator.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
         self.subwindow_5.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
-        self.subWindow_geometric_parameters.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.subWindow_geometric_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.label_R1.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0434\u0438\u0443\u0441 \u0432\u0435\u0440\u0445\u043d\u0435\u0439 \u043a\u0440\u043e\u043c\u043a\u0438", None))
         self.label_R2.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0434\u0438\u0443\u0441 \u043d\u0438\u0436\u043d\u0435\u0439 \u043a\u0440\u043e\u043c\u043a\u0438", None))
         self.label_H.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
         self.label_geometric_params_model.setText("")
-        self.subWindow_edge_structure_parameters.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0440\u0435\u0431\u0435\u0440\u043d\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b", None))
+        self.subWindow_edge_structure_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0440\u0435\u0431\u0435\u0440\u043d\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b", None))
         self.groupBox_a_b_sp.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_a_sp.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_b_sp.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
@@ -1104,7 +1128,7 @@ class Ui_MainWindow(object):
         self.groupBox_a_b_shp.setTitle(QCoreApplication.translate("MainWindow", u"\u0428\u043f\u0430\u043d\u0433\u043e\u0443\u0442", None))
         self.label_a_shp.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_b_shp.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
-        self.subWindow_physical_mechanical_parameters.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437\u0438\u043a\u043e-\u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438", None))
+        self.subWindow_physical_mechanical_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437\u0438\u043a\u043e-\u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438", None))
         self.groupBox_spiral.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_Ex_spiral.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
         self.label_Ey_spiral.setText(QCoreApplication.translate("MainWindow", u"E_y", None))
@@ -1129,7 +1153,7 @@ class Ui_MainWindow(object):
         self.label_Gyz_ring.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
         self.label_Gxz_ring.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
         self.label_v_ring.setText(QCoreApplication.translate("MainWindow", u"v", None))
-        self.subWindow_calculated_parameters.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.subWindow_calculated_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.label_M1.setText(QCoreApplication.translate("MainWindow", u"M_1", None))
         self.label_value_M1.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_M2.setText(QCoreApplication.translate("MainWindow", u"M_2", None))
@@ -1152,10 +1176,12 @@ class Ui_MainWindow(object):
         self.label_value_p1.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_p2.setText(QCoreApplication.translate("MainWindow", u"p_2", None))
         self.label_value_p2.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.subWindow_construction_parameters.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0438\u0441\u0445\u043e\u0434\u043d\u043e\u0439 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
+        self.subWindow_construction_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0438\u0441\u0445\u043e\u0434\u043d\u043e\u0439 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
         self.label_N.setText(QCoreApplication.translate("MainWindow", u"\u0427\u0438\u0441\u043b\u043e \u0441\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0440\u0435\u0431\u0435\u0440", None))
         self.label_m.setText(QCoreApplication.translate("MainWindow", u"\u0427\u0438\u0441\u043b\u043e \u043a\u043e\u043b\u044c\u0446\u0435\u0432\u044b\u0445 \u0440\u0435\u0431\u0435\u0440", None))
         self.label_m_shp.setText(QCoreApplication.translate("MainWindow", u"\u0427\u0438\u0441\u043b\u043e \u0448\u043f\u0430\u043d\u0433\u043e\u0443\u0442\u043e\u0432", None))
         self.label_alp.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0433\u043e\u043b", None))
+        self.subWindow_generator.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
+        self.pushButton_start_generation.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0443\u0441\u043a \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438", None))
     # retranslateUi
 

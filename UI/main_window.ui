@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1011</width>
+    <width>1017</width>
     <height>792</height>
    </rect>
   </property>
@@ -35,13 +35,13 @@
       <property name="tabsMovable">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="subWindow_parameters_toolbox">
+      <widget class="QWidget" name="subWindow_params_toolbox">
        <property name="windowTitle">
         <string>Параметры</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton_geometric_parameters">
+         <widget class="QPushButton" name="pushButton_geometric_params">
           <property name="text">
            <string>Геометрические параметры</string>
           </property>
@@ -51,7 +51,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_physical_mechanical_parameters">
+         <widget class="QPushButton" name="pushButton_physical_mechanical_params">
           <property name="text">
            <string>Физико-механические характеристики</string>
           </property>
@@ -61,7 +61,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_edge_structure_parameters">
+         <widget class="QPushButton" name="pushButton_edge_structure_params">
           <property name="text">
            <string>Параметры реберной структуры</string>
           </property>
@@ -71,7 +71,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_construction_parameters">
+         <widget class="QPushButton" name="pushButton_construction_params">
           <property name="text">
            <string>Параметры исходной конструкции</string>
           </property>
@@ -81,7 +81,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_calculated_peremeters">
+         <widget class="QPushButton" name="pushButton_calculated_params">
           <property name="text">
            <string>Вычисленные параметры</string>
           </property>
@@ -105,10 +105,35 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="subwindow_4">
+      <widget class="QWidget" name="subWindow_prepare_solver">
        <property name="windowTitle">
         <string>Подготовка решения</string>
        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="pushButton_generator">
+          <property name="text">
+           <string>Генератор</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="subwindow_5">
        <property name="windowTitle">
@@ -134,7 +159,7 @@
       <property name="tabsClosable">
        <bool>false</bool>
       </property>
-      <widget class="SubWindowBase" name="subWindow_geometric_parameters">
+      <widget class="SubWindowBase" name="subWindow_geometric_params">
        <property name="minimumSize">
         <size>
          <width>300</width>
@@ -235,7 +260,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_edge_structure_parameters">
+      <widget class="SubWindowBase" name="subWindow_edge_structure_params">
        <property name="minimumSize">
         <size>
          <width>320</width>
@@ -437,7 +462,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_physical_mechanical_parameters">
+      <widget class="SubWindowBase" name="subWindow_physical_mechanical_params">
        <property name="minimumSize">
         <size>
          <width>450</width>
@@ -1108,7 +1133,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_calculated_parameters">
+      <widget class="SubWindowCalculatedParams" name="subWindow_calculated_params">
        <property name="minimumSize">
         <size>
          <width>280</width>
@@ -1120,7 +1145,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_calculated_parameters">
+         <layout class="QVBoxLayout" name="verticalLayout_calculated_params">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_M1">
             <item>
@@ -1466,7 +1491,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_construction_parameters">
+      <widget class="SubWindowBase" name="subWindow_construction_params">
        <property name="minimumSize">
         <size>
          <width>330</width>
@@ -1587,6 +1612,20 @@
         </item>
        </layout>
       </widget>
+      <widget class="SubWindowBase" name="subWindow_generator">
+       <property name="windowTitle">
+        <string>Генератор</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="pushButton_start_generation">
+          <property name="text">
+           <string>Запуск генерации</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1614,6 +1653,12 @@
    <class>DoubleSpinBoxMechanical</class>
    <extends>QDoubleSpinBox</extends>
    <header>Widgets/DoubleSpinBox/double_spin_box_mechanical</header>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowCalculatedParams</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_calculated_params</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
