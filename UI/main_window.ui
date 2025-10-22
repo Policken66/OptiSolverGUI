@@ -159,7 +159,7 @@
       <property name="tabsClosable">
        <bool>false</bool>
       </property>
-      <widget class="SubWindowBase" name="subWindow_geometric_params">
+      <widget class="SubWindowGeometricParams" name="subWindow_geometric_params">
        <property name="minimumSize">
         <size>
          <width>300</width>
@@ -260,7 +260,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_edge_structure_params">
+      <widget class="SubWindowEdgeStructureParams" name="subWindow_edge_structure_params">
        <property name="minimumSize">
         <size>
          <width>320</width>
@@ -335,22 +335,22 @@
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox_a_b_col">
+         <widget class="QGroupBox" name="groupBox_a_b_ring">
           <property name="title">
            <string>Кольцевые ребра</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_18">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_a_col">
+            <layout class="QHBoxLayout" name="horizontalLayout_a_ring">
              <item>
-              <widget class="QLabel" name="label_a_col">
+              <widget class="QLabel" name="label_a_ring">
                <property name="text">
                 <string>Толщина ребра</string>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer_a_col">
+              <spacer name="horizontalSpacer_a_ring">
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
@@ -363,21 +363,21 @@
               </spacer>
              </item>
              <item>
-              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_a_col"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_a_ring"/>
              </item>
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_b_col">
+            <layout class="QHBoxLayout" name="horizontalLayout_b_ring">
              <item>
-              <widget class="QLabel" name="label_b_col">
+              <widget class="QLabel" name="label_b_ring">
                <property name="text">
                 <string>Высота ребра</string>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer_b_col">
+              <spacer name="horizontalSpacer_b_ring">
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
@@ -390,7 +390,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_b_col"/>
+              <widget class="DoubleSpinBoxGeometry" name="doubleSpinBox_b_ring"/>
              </item>
             </layout>
            </item>
@@ -462,7 +462,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_physical_mechanical_params">
+      <widget class="SubWindowPhysicalMechanicalParams" name="subWindow_physical_mechanical_params">
        <property name="minimumSize">
         <size>
          <width>450</width>
@@ -474,7 +474,7 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
-         <widget class="QGroupBox" name="groupBox_spiral">
+         <widget class="QGroupBox" name="groupBox_sp">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -492,18 +492,18 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_spiral">
+            <layout class="QVBoxLayout" name="verticalLayout_sp">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Ex_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ex_sp">
                <item>
-                <widget class="QLabel" name="label_Ex_spiral">
+                <widget class="QLabel" name="label_Ex_sp">
                  <property name="text">
                   <string>E_x</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Ex_spiral">
+                <spacer name="horizontalSpacer_Ex_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -519,12 +519,12 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ex_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ex_sp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Ey_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ey_sp">
                <item>
                 <widget class="QLabel" name="label_Ey_spiral">
                  <property name="text">
@@ -533,7 +533,7 @@
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Ey_spiral">
+                <spacer name="horizontalSpacer_Ey_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -549,21 +549,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ey_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ey_sp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Ez_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_Ez_sp">
                <item>
-                <widget class="QLabel" name="label_Ez_spiral">
+                <widget class="QLabel" name="label_Ez_sp">
                  <property name="text">
                   <string>E_z</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Ez_spiral">
+                <spacer name="horizontalSpacer_Ez_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -579,21 +579,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ez_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Ez_sp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Gxy_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxy_sp">
                <item>
-                <widget class="QLabel" name="label_Gxy_spiral">
+                <widget class="QLabel" name="label_Gxy_sp">
                  <property name="text">
                   <string>G_xy</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Gxy_spiral">
+                <spacer name="horizontalSpacer_Gxy_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -609,7 +609,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxy_spiral">
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxy_sp">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -621,16 +621,16 @@
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Gyz_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gyz_sp">
                <item>
-                <widget class="QLabel" name="label_Gyz_spiral">
+                <widget class="QLabel" name="label_Gyz_sp">
                  <property name="text">
                   <string>G_yz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Gyz_spiral">
+                <spacer name="horizontalSpacer_Gyz_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -646,21 +646,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gyz_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gyz_sp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_Gxz">
+              <layout class="QHBoxLayout" name="horizontalLayout_Gxz_sp">
                <item>
-                <widget class="QLabel" name="label_Gxz_spiral">
+                <widget class="QLabel" name="label_Gxz_sp">
                  <property name="text">
                   <string>G_xz</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_Gxz_spiral">
+                <spacer name="horizontalSpacer_Gxz_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -676,21 +676,21 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxz_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_Gxz_sp"/>
                </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_v_spiral">
+              <layout class="QHBoxLayout" name="horizontalLayout_v_sp">
                <item>
-                <widget class="QLabel" name="label_v_spiral">
+                <widget class="QLabel" name="label_v_sp">
                  <property name="text">
                   <string>v</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_v_spiral">
+                <spacer name="horizontalSpacer_v_sp">
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
                  </property>
@@ -706,7 +706,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_spiral"/>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_sp"/>
                </item>
               </layout>
              </item>
@@ -1491,7 +1491,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_construction_params">
+      <widget class="SubWindowConstructionParams" name="subWindow_construction_params">
        <property name="minimumSize">
         <size>
          <width>330</width>
@@ -1612,7 +1612,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="SubWindowBase" name="subWindow_generator">
+      <widget class="SubWindowGenerator" name="subWindow_generator">
        <property name="windowTitle">
         <string>Генератор</string>
        </property>
@@ -1634,12 +1634,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SubWindowBase</class>
-   <extends>QWidget</extends>
-   <header>Widgets/SubWindow/sub_window_base</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SpinBoxQuantity</class>
    <extends>QSpinBox</extends>
    <header>Widgets/SpinBox/spin_box_quantity</header>
@@ -1658,6 +1652,36 @@
    <class>SubWindowCalculatedParams</class>
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_calculated_params</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowConstructionParams</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_construction_params</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowEdgeStructureParams</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_edge_structure_params</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowGeometricParams</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_geometric_params</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowPhysicalMechanicalParams</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_physical_mechanical_params</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowGenerator</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_generator</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,8 +23,12 @@ from PySide6.QtWidgets import (QApplication, QDoubleSpinBox, QGroupBox, QHBoxLay
 from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
 from Widgets.SpinBox.spin_box_quantity import SpinBoxQuantity
-from Widgets.SubWindow.sub_window_base import SubWindowBase
 from Widgets.SubWindow.sub_window_calculated_params import SubWindowCalculatedParams
+from Widgets.SubWindow.sub_window_construction_params import SubWindowConstructionParams
+from Widgets.SubWindow.sub_window_edge_structure_params import SubWindowEdgeStructureParams
+from Widgets.SubWindow.sub_window_generator import SubWindowGenerator
+from Widgets.SubWindow.sub_window_geometric_params import SubWindowGeometricParams
+from Widgets.SubWindow.sub_window_physical_mechanical_params import SubWindowPhysicalMechanicalParams
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -115,7 +119,7 @@ class Ui_MainWindow(object):
         self.mdiArea.setViewMode(QMdiArea.ViewMode.SubWindowView)
         self.mdiArea.setDocumentMode(True)
         self.mdiArea.setTabsClosable(False)
-        self.subWindow_geometric_params = SubWindowBase()
+        self.subWindow_geometric_params = SubWindowGeometricParams()
         self.subWindow_geometric_params.setObjectName(u"subWindow_geometric_params")
         self.subWindow_geometric_params.setMinimumSize(QSize(300, 0))
         self.verticalLayout_15 = QVBoxLayout(self.subWindow_geometric_params)
@@ -183,7 +187,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.addWidget(self.label_geometric_params_model)
 
         self.mdiArea.addSubWindow(self.subWindow_geometric_params)
-        self.subWindow_edge_structure_params = SubWindowBase()
+        self.subWindow_edge_structure_params = SubWindowEdgeStructureParams()
         self.subWindow_edge_structure_params.setObjectName(u"subWindow_edge_structure_params")
         self.subWindow_edge_structure_params.setMinimumSize(QSize(320, 0))
         self.verticalLayout_11 = QVBoxLayout(self.subWindow_edge_structure_params)
@@ -233,50 +237,50 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.groupBox_a_b_sp)
 
-        self.groupBox_a_b_col = QGroupBox(self.subWindow_edge_structure_params)
-        self.groupBox_a_b_col.setObjectName(u"groupBox_a_b_col")
-        self.verticalLayout_18 = QVBoxLayout(self.groupBox_a_b_col)
+        self.groupBox_a_b_ring = QGroupBox(self.subWindow_edge_structure_params)
+        self.groupBox_a_b_ring.setObjectName(u"groupBox_a_b_ring")
+        self.verticalLayout_18 = QVBoxLayout(self.groupBox_a_b_ring)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.horizontalLayout_a_col = QHBoxLayout()
-        self.horizontalLayout_a_col.setObjectName(u"horizontalLayout_a_col")
-        self.label_a_col = QLabel(self.groupBox_a_b_col)
-        self.label_a_col.setObjectName(u"label_a_col")
+        self.horizontalLayout_a_ring = QHBoxLayout()
+        self.horizontalLayout_a_ring.setObjectName(u"horizontalLayout_a_ring")
+        self.label_a_ring = QLabel(self.groupBox_a_b_ring)
+        self.label_a_ring.setObjectName(u"label_a_ring")
 
-        self.horizontalLayout_a_col.addWidget(self.label_a_col)
+        self.horizontalLayout_a_ring.addWidget(self.label_a_ring)
 
-        self.horizontalSpacer_a_col = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_a_ring = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_a_col.addItem(self.horizontalSpacer_a_col)
+        self.horizontalLayout_a_ring.addItem(self.horizontalSpacer_a_ring)
 
-        self.doubleSpinBox_a_col = DoubleSpinBoxGeometry(self.groupBox_a_b_col)
-        self.doubleSpinBox_a_col.setObjectName(u"doubleSpinBox_a_col")
+        self.doubleSpinBox_a_ring = DoubleSpinBoxGeometry(self.groupBox_a_b_ring)
+        self.doubleSpinBox_a_ring.setObjectName(u"doubleSpinBox_a_ring")
 
-        self.horizontalLayout_a_col.addWidget(self.doubleSpinBox_a_col)
-
-
-        self.verticalLayout_18.addLayout(self.horizontalLayout_a_col)
-
-        self.horizontalLayout_b_col = QHBoxLayout()
-        self.horizontalLayout_b_col.setObjectName(u"horizontalLayout_b_col")
-        self.label_b_col = QLabel(self.groupBox_a_b_col)
-        self.label_b_col.setObjectName(u"label_b_col")
-
-        self.horizontalLayout_b_col.addWidget(self.label_b_col)
-
-        self.horizontalSpacer_b_col = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_b_col.addItem(self.horizontalSpacer_b_col)
-
-        self.doubleSpinBox_b_col = DoubleSpinBoxGeometry(self.groupBox_a_b_col)
-        self.doubleSpinBox_b_col.setObjectName(u"doubleSpinBox_b_col")
-
-        self.horizontalLayout_b_col.addWidget(self.doubleSpinBox_b_col)
+        self.horizontalLayout_a_ring.addWidget(self.doubleSpinBox_a_ring)
 
 
-        self.verticalLayout_18.addLayout(self.horizontalLayout_b_col)
+        self.verticalLayout_18.addLayout(self.horizontalLayout_a_ring)
+
+        self.horizontalLayout_b_ring = QHBoxLayout()
+        self.horizontalLayout_b_ring.setObjectName(u"horizontalLayout_b_ring")
+        self.label_b_ring = QLabel(self.groupBox_a_b_ring)
+        self.label_b_ring.setObjectName(u"label_b_ring")
+
+        self.horizontalLayout_b_ring.addWidget(self.label_b_ring)
+
+        self.horizontalSpacer_b_ring = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_b_ring.addItem(self.horizontalSpacer_b_ring)
+
+        self.doubleSpinBox_b_ring = DoubleSpinBoxGeometry(self.groupBox_a_b_ring)
+        self.doubleSpinBox_b_ring.setObjectName(u"doubleSpinBox_b_ring")
+
+        self.horizontalLayout_b_ring.addWidget(self.doubleSpinBox_b_ring)
 
 
-        self.verticalLayout_11.addWidget(self.groupBox_a_b_col)
+        self.verticalLayout_18.addLayout(self.horizontalLayout_b_ring)
+
+
+        self.verticalLayout_11.addWidget(self.groupBox_a_b_ring)
 
         self.groupBox_a_b_shp = QGroupBox(self.subWindow_edge_structure_params)
         self.groupBox_a_b_shp.setObjectName(u"groupBox_a_b_shp")
@@ -324,163 +328,163 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addWidget(self.groupBox_a_b_shp)
 
         self.mdiArea.addSubWindow(self.subWindow_edge_structure_params)
-        self.subWindow_physical_mechanical_params = SubWindowBase()
+        self.subWindow_physical_mechanical_params = SubWindowPhysicalMechanicalParams()
         self.subWindow_physical_mechanical_params.setObjectName(u"subWindow_physical_mechanical_params")
         self.subWindow_physical_mechanical_params.setMinimumSize(QSize(450, 0))
         self.horizontalLayout_6 = QHBoxLayout(self.subWindow_physical_mechanical_params)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.groupBox_spiral = QGroupBox(self.subWindow_physical_mechanical_params)
-        self.groupBox_spiral.setObjectName(u"groupBox_spiral")
-        sizePolicy1.setHeightForWidth(self.groupBox_spiral.sizePolicy().hasHeightForWidth())
-        self.groupBox_spiral.setSizePolicy(sizePolicy1)
-        self.groupBox_spiral.setMinimumSize(QSize(0, 0))
-        self.verticalLayout_12 = QVBoxLayout(self.groupBox_spiral)
+        self.groupBox_sp = QGroupBox(self.subWindow_physical_mechanical_params)
+        self.groupBox_sp.setObjectName(u"groupBox_sp")
+        sizePolicy1.setHeightForWidth(self.groupBox_sp.sizePolicy().hasHeightForWidth())
+        self.groupBox_sp.setSizePolicy(sizePolicy1)
+        self.groupBox_sp.setMinimumSize(QSize(0, 0))
+        self.verticalLayout_12 = QVBoxLayout(self.groupBox_sp)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_spiral = QVBoxLayout()
-        self.verticalLayout_spiral.setObjectName(u"verticalLayout_spiral")
-        self.horizontalLayout_Ex_spiral = QHBoxLayout()
-        self.horizontalLayout_Ex_spiral.setObjectName(u"horizontalLayout_Ex_spiral")
-        self.label_Ex_spiral = QLabel(self.groupBox_spiral)
-        self.label_Ex_spiral.setObjectName(u"label_Ex_spiral")
+        self.verticalLayout_sp = QVBoxLayout()
+        self.verticalLayout_sp.setObjectName(u"verticalLayout_sp")
+        self.horizontalLayout_Ex_sp = QHBoxLayout()
+        self.horizontalLayout_Ex_sp.setObjectName(u"horizontalLayout_Ex_sp")
+        self.label_Ex_sp = QLabel(self.groupBox_sp)
+        self.label_Ex_sp.setObjectName(u"label_Ex_sp")
 
-        self.horizontalLayout_Ex_spiral.addWidget(self.label_Ex_spiral)
+        self.horizontalLayout_Ex_sp.addWidget(self.label_Ex_sp)
 
-        self.horizontalSpacer_Ex_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_Ex_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_Ex_spiral.addItem(self.horizontalSpacer_Ex_spiral)
+        self.horizontalLayout_Ex_sp.addItem(self.horizontalSpacer_Ex_sp)
 
-        self.doubleSpinBox_Ex_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Ex_spiral.setObjectName(u"doubleSpinBox_Ex_spiral")
+        self.doubleSpinBox_Ex_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Ex_sp.setObjectName(u"doubleSpinBox_Ex_sp")
 
-        self.horizontalLayout_Ex_spiral.addWidget(self.doubleSpinBox_Ex_spiral)
+        self.horizontalLayout_Ex_sp.addWidget(self.doubleSpinBox_Ex_sp)
 
 
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Ex_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Ex_sp)
 
-        self.horizontalLayout_Ey_spiral = QHBoxLayout()
-        self.horizontalLayout_Ey_spiral.setObjectName(u"horizontalLayout_Ey_spiral")
-        self.label_Ey_spiral = QLabel(self.groupBox_spiral)
+        self.horizontalLayout_Ey_sp = QHBoxLayout()
+        self.horizontalLayout_Ey_sp.setObjectName(u"horizontalLayout_Ey_sp")
+        self.label_Ey_spiral = QLabel(self.groupBox_sp)
         self.label_Ey_spiral.setObjectName(u"label_Ey_spiral")
 
-        self.horizontalLayout_Ey_spiral.addWidget(self.label_Ey_spiral)
+        self.horizontalLayout_Ey_sp.addWidget(self.label_Ey_spiral)
 
-        self.horizontalSpacer_Ey_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_Ey_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_Ey_spiral.addItem(self.horizontalSpacer_Ey_spiral)
+        self.horizontalLayout_Ey_sp.addItem(self.horizontalSpacer_Ey_sp)
 
-        self.doubleSpinBox_Ey_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Ey_spiral.setObjectName(u"doubleSpinBox_Ey_spiral")
+        self.doubleSpinBox_Ey_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Ey_sp.setObjectName(u"doubleSpinBox_Ey_sp")
 
-        self.horizontalLayout_Ey_spiral.addWidget(self.doubleSpinBox_Ey_spiral)
-
-
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Ey_spiral)
-
-        self.horizontalLayout_Ez_spiral = QHBoxLayout()
-        self.horizontalLayout_Ez_spiral.setObjectName(u"horizontalLayout_Ez_spiral")
-        self.label_Ez_spiral = QLabel(self.groupBox_spiral)
-        self.label_Ez_spiral.setObjectName(u"label_Ez_spiral")
-
-        self.horizontalLayout_Ez_spiral.addWidget(self.label_Ez_spiral)
-
-        self.horizontalSpacer_Ez_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_Ez_spiral.addItem(self.horizontalSpacer_Ez_spiral)
-
-        self.doubleSpinBox_Ez_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Ez_spiral.setObjectName(u"doubleSpinBox_Ez_spiral")
-
-        self.horizontalLayout_Ez_spiral.addWidget(self.doubleSpinBox_Ez_spiral)
+        self.horizontalLayout_Ey_sp.addWidget(self.doubleSpinBox_Ey_sp)
 
 
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Ez_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Ey_sp)
 
-        self.horizontalLayout_Gxy_spiral = QHBoxLayout()
-        self.horizontalLayout_Gxy_spiral.setObjectName(u"horizontalLayout_Gxy_spiral")
-        self.label_Gxy_spiral = QLabel(self.groupBox_spiral)
-        self.label_Gxy_spiral.setObjectName(u"label_Gxy_spiral")
+        self.horizontalLayout_Ez_sp = QHBoxLayout()
+        self.horizontalLayout_Ez_sp.setObjectName(u"horizontalLayout_Ez_sp")
+        self.label_Ez_sp = QLabel(self.groupBox_sp)
+        self.label_Ez_sp.setObjectName(u"label_Ez_sp")
 
-        self.horizontalLayout_Gxy_spiral.addWidget(self.label_Gxy_spiral)
+        self.horizontalLayout_Ez_sp.addWidget(self.label_Ez_sp)
 
-        self.horizontalSpacer_Gxy_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_Ez_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_Gxy_spiral.addItem(self.horizontalSpacer_Gxy_spiral)
+        self.horizontalLayout_Ez_sp.addItem(self.horizontalSpacer_Ez_sp)
 
-        self.doubleSpinBox_Gxy_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Gxy_spiral.setObjectName(u"doubleSpinBox_Gxy_spiral")
+        self.doubleSpinBox_Ez_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Ez_sp.setObjectName(u"doubleSpinBox_Ez_sp")
+
+        self.horizontalLayout_Ez_sp.addWidget(self.doubleSpinBox_Ez_sp)
+
+
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Ez_sp)
+
+        self.horizontalLayout_Gxy_sp = QHBoxLayout()
+        self.horizontalLayout_Gxy_sp.setObjectName(u"horizontalLayout_Gxy_sp")
+        self.label_Gxy_sp = QLabel(self.groupBox_sp)
+        self.label_Gxy_sp.setObjectName(u"label_Gxy_sp")
+
+        self.horizontalLayout_Gxy_sp.addWidget(self.label_Gxy_sp)
+
+        self.horizontalSpacer_Gxy_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_Gxy_sp.addItem(self.horizontalSpacer_Gxy_sp)
+
+        self.doubleSpinBox_Gxy_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Gxy_sp.setObjectName(u"doubleSpinBox_Gxy_sp")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.doubleSpinBox_Gxy_spiral.sizePolicy().hasHeightForWidth())
-        self.doubleSpinBox_Gxy_spiral.setSizePolicy(sizePolicy2)
+        sizePolicy2.setHeightForWidth(self.doubleSpinBox_Gxy_sp.sizePolicy().hasHeightForWidth())
+        self.doubleSpinBox_Gxy_sp.setSizePolicy(sizePolicy2)
 
-        self.horizontalLayout_Gxy_spiral.addWidget(self.doubleSpinBox_Gxy_spiral)
-
-
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Gxy_spiral)
-
-        self.horizontalLayout_Gyz_spiral = QHBoxLayout()
-        self.horizontalLayout_Gyz_spiral.setObjectName(u"horizontalLayout_Gyz_spiral")
-        self.label_Gyz_spiral = QLabel(self.groupBox_spiral)
-        self.label_Gyz_spiral.setObjectName(u"label_Gyz_spiral")
-
-        self.horizontalLayout_Gyz_spiral.addWidget(self.label_Gyz_spiral)
-
-        self.horizontalSpacer_Gyz_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_Gyz_spiral.addItem(self.horizontalSpacer_Gyz_spiral)
-
-        self.doubleSpinBox_Gyz_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Gyz_spiral.setObjectName(u"doubleSpinBox_Gyz_spiral")
-
-        self.horizontalLayout_Gyz_spiral.addWidget(self.doubleSpinBox_Gyz_spiral)
+        self.horizontalLayout_Gxy_sp.addWidget(self.doubleSpinBox_Gxy_sp)
 
 
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Gyz_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Gxy_sp)
 
-        self.horizontalLayout_Gxz = QHBoxLayout()
-        self.horizontalLayout_Gxz.setObjectName(u"horizontalLayout_Gxz")
-        self.label_Gxz_spiral = QLabel(self.groupBox_spiral)
-        self.label_Gxz_spiral.setObjectName(u"label_Gxz_spiral")
+        self.horizontalLayout_Gyz_sp = QHBoxLayout()
+        self.horizontalLayout_Gyz_sp.setObjectName(u"horizontalLayout_Gyz_sp")
+        self.label_Gyz_sp = QLabel(self.groupBox_sp)
+        self.label_Gyz_sp.setObjectName(u"label_Gyz_sp")
 
-        self.horizontalLayout_Gxz.addWidget(self.label_Gxz_spiral)
+        self.horizontalLayout_Gyz_sp.addWidget(self.label_Gyz_sp)
 
-        self.horizontalSpacer_Gxz_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_Gyz_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_Gxz.addItem(self.horizontalSpacer_Gxz_spiral)
+        self.horizontalLayout_Gyz_sp.addItem(self.horizontalSpacer_Gyz_sp)
 
-        self.doubleSpinBox_Gxz_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_Gxz_spiral.setObjectName(u"doubleSpinBox_Gxz_spiral")
+        self.doubleSpinBox_Gyz_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Gyz_sp.setObjectName(u"doubleSpinBox_Gyz_sp")
 
-        self.horizontalLayout_Gxz.addWidget(self.doubleSpinBox_Gxz_spiral)
-
-
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_Gxz)
-
-        self.horizontalLayout_v_spiral = QHBoxLayout()
-        self.horizontalLayout_v_spiral.setObjectName(u"horizontalLayout_v_spiral")
-        self.label_v_spiral = QLabel(self.groupBox_spiral)
-        self.label_v_spiral.setObjectName(u"label_v_spiral")
-
-        self.horizontalLayout_v_spiral.addWidget(self.label_v_spiral)
-
-        self.horizontalSpacer_v_spiral = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_v_spiral.addItem(self.horizontalSpacer_v_spiral)
-
-        self.doubleSpinBox_v_spiral = DoubleSpinBoxMechanical(self.groupBox_spiral)
-        self.doubleSpinBox_v_spiral.setObjectName(u"doubleSpinBox_v_spiral")
-
-        self.horizontalLayout_v_spiral.addWidget(self.doubleSpinBox_v_spiral)
+        self.horizontalLayout_Gyz_sp.addWidget(self.doubleSpinBox_Gyz_sp)
 
 
-        self.verticalLayout_spiral.addLayout(self.horizontalLayout_v_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Gyz_sp)
+
+        self.horizontalLayout_Gxz_sp = QHBoxLayout()
+        self.horizontalLayout_Gxz_sp.setObjectName(u"horizontalLayout_Gxz_sp")
+        self.label_Gxz_sp = QLabel(self.groupBox_sp)
+        self.label_Gxz_sp.setObjectName(u"label_Gxz_sp")
+
+        self.horizontalLayout_Gxz_sp.addWidget(self.label_Gxz_sp)
+
+        self.horizontalSpacer_Gxz_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_Gxz_sp.addItem(self.horizontalSpacer_Gxz_sp)
+
+        self.doubleSpinBox_Gxz_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_Gxz_sp.setObjectName(u"doubleSpinBox_Gxz_sp")
+
+        self.horizontalLayout_Gxz_sp.addWidget(self.doubleSpinBox_Gxz_sp)
 
 
-        self.verticalLayout_12.addLayout(self.verticalLayout_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_Gxz_sp)
+
+        self.horizontalLayout_v_sp = QHBoxLayout()
+        self.horizontalLayout_v_sp.setObjectName(u"horizontalLayout_v_sp")
+        self.label_v_sp = QLabel(self.groupBox_sp)
+        self.label_v_sp.setObjectName(u"label_v_sp")
+
+        self.horizontalLayout_v_sp.addWidget(self.label_v_sp)
+
+        self.horizontalSpacer_v_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_v_sp.addItem(self.horizontalSpacer_v_sp)
+
+        self.doubleSpinBox_v_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_v_sp.setObjectName(u"doubleSpinBox_v_sp")
+
+        self.horizontalLayout_v_sp.addWidget(self.doubleSpinBox_v_sp)
 
 
-        self.horizontalLayout_6.addWidget(self.groupBox_spiral)
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_v_sp)
+
+
+        self.verticalLayout_12.addLayout(self.verticalLayout_sp)
+
+
+        self.horizontalLayout_6.addWidget(self.groupBox_sp)
 
         self.groupBox_shp = QGroupBox(self.subWindow_physical_mechanical_params)
         self.groupBox_shp.setObjectName(u"groupBox_shp")
@@ -997,7 +1001,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addLayout(self.verticalLayout_calculated_params)
 
         self.mdiArea.addSubWindow(self.subWindow_calculated_params)
-        self.subWindow_construction_params = SubWindowBase()
+        self.subWindow_construction_params = SubWindowConstructionParams()
         self.subWindow_construction_params.setObjectName(u"subWindow_construction_params")
         self.subWindow_construction_params.setMinimumSize(QSize(330, 0))
         self.verticalLayout_9 = QVBoxLayout(self.subWindow_construction_params)
@@ -1079,7 +1083,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addLayout(self.horizontalLayout_alp)
 
         self.mdiArea.addSubWindow(self.subWindow_construction_params)
-        self.subWindow_generator = SubWindowBase()
+        self.subWindow_generator = SubWindowGenerator()
         self.subWindow_generator.setObjectName(u"subWindow_generator")
         self.verticalLayout_2 = QVBoxLayout(self.subWindow_generator)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -1122,21 +1126,21 @@ class Ui_MainWindow(object):
         self.groupBox_a_b_sp.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_a_sp.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_b_sp.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
-        self.groupBox_a_b_col.setTitle(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
-        self.label_a_col.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
-        self.label_b_col.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
+        self.groupBox_a_b_ring.setTitle(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
+        self.label_a_ring.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
+        self.label_b_ring.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.groupBox_a_b_shp.setTitle(QCoreApplication.translate("MainWindow", u"\u0428\u043f\u0430\u043d\u0433\u043e\u0443\u0442", None))
         self.label_a_shp.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_b_shp.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430 \u0440\u0435\u0431\u0440\u0430", None))
         self.subWindow_physical_mechanical_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437\u0438\u043a\u043e-\u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438", None))
-        self.groupBox_spiral.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
-        self.label_Ex_spiral.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
+        self.groupBox_sp.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
+        self.label_Ex_sp.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
         self.label_Ey_spiral.setText(QCoreApplication.translate("MainWindow", u"E_y", None))
-        self.label_Ez_spiral.setText(QCoreApplication.translate("MainWindow", u"E_z", None))
-        self.label_Gxy_spiral.setText(QCoreApplication.translate("MainWindow", u"G_xy", None))
-        self.label_Gyz_spiral.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
-        self.label_Gxz_spiral.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
-        self.label_v_spiral.setText(QCoreApplication.translate("MainWindow", u"v", None))
+        self.label_Ez_sp.setText(QCoreApplication.translate("MainWindow", u"E_z", None))
+        self.label_Gxy_sp.setText(QCoreApplication.translate("MainWindow", u"G_xy", None))
+        self.label_Gyz_sp.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
+        self.label_Gxz_sp.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
+        self.label_v_sp.setText(QCoreApplication.translate("MainWindow", u"v", None))
         self.groupBox_shp.setTitle(QCoreApplication.translate("MainWindow", u"\u0428\u043f\u0430\u043d\u0433\u043e\u0443\u0442", None))
         self.label_Ex_shp.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
         self.label_Ey_shp.setText(QCoreApplication.translate("MainWindow", u"E_y", None))
