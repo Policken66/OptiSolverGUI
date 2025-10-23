@@ -26,6 +26,8 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         for sub, btn in self.sub_to_btn.items():
             sub.hide_sub_window_signal.connect(lambda s=sub: self._on_request_hide(s))
 
+        self.subWindow_generator.start_generation_signal.connect(self._on_request_start_generation)
+
         self.hide_all_sub_windows()
         self._sub_window_setup_ui()
 
@@ -118,3 +120,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
     def _sub_window_setup_ui(self):
         for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
             sub_window._setup_ui()
+
+    def _on_request_start_generation(self):
+        for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
+            sub_window._save_params()

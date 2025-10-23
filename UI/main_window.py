@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.3
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDoubleSpinBox, QGroupBox, QHBoxLayout,
-    QLabel, QMainWindow, QMdiArea, QPushButton,
-    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
-    QWidget)
+    QLabel, QMainWindow, QMdiArea, QPlainTextEdit,
+    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
+    QVBoxLayout, QWidget)
 
 from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
@@ -1087,6 +1087,11 @@ class Ui_MainWindow(object):
         self.subWindow_generator.setObjectName(u"subWindow_generator")
         self.verticalLayout_2 = QVBoxLayout(self.subWindow_generator)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.plainTextEdit_generator = QPlainTextEdit(self.subWindow_generator)
+        self.plainTextEdit_generator.setObjectName(u"plainTextEdit_generator")
+
+        self.verticalLayout_2.addWidget(self.plainTextEdit_generator)
+
         self.pushButton_start_generation = QPushButton(self.subWindow_generator)
         self.pushButton_start_generation.setObjectName(u"pushButton_start_generation")
 
@@ -1186,6 +1191,6 @@ class Ui_MainWindow(object):
         self.label_m_shp.setText(QCoreApplication.translate("MainWindow", u"\u0427\u0438\u0441\u043b\u043e \u0448\u043f\u0430\u043d\u0433\u043e\u0443\u0442\u043e\u0432", None))
         self.label_alp.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0433\u043e\u043b", None))
         self.subWindow_generator.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
-        self.pushButton_start_generation.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0443\u0441\u043a \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438", None))
+        self.pushButton_start_generation.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f APDL", None))
     # retranslateUi
 

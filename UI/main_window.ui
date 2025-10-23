@@ -1618,9 +1618,12 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_generator"/>
+        </item>
+        <item>
          <widget class="QPushButton" name="pushButton_start_generation">
           <property name="text">
-           <string>Запуск генерации</string>
+           <string>Генерация APDL</string>
           </property>
          </widget>
         </item>

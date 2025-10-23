@@ -33,7 +33,7 @@ class SubWindowConstructionParams(SubWindowBase):
         file_manager.json_update(JSON_WIDGET_SETTINGS, data)
 
     def _load_params(self):
-        values = file_manager.data_update_from_json(JSON_WIDGET_SETTINGS, self.widget_names)
+        values = file_manager.data_from_json(JSON_WIDGET_SETTINGS, self.widget_names)
         for widget_name, value in zip(self.widget_names, values):
             if value is not None and widget_name in self.widgets:
                 widget = self.widgets[widget_name]

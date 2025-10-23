@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Any, List, Tuple
+from typing import Any, List, Tuple, Dict
 
 
 def json_update(json_path: str, data: List[Tuple[str, Any]]) -> None:
@@ -29,7 +29,7 @@ def json_update(json_path: str, data: List[Tuple[str, Any]]) -> None:
         json.dump(existing_data, f, indent=4, ensure_ascii=False)
 
 
-def data_update_from_json(json_path: str, names: List[str]) -> List[Any]:
+def data_from_json(json_path: str, names: List[str]) -> List[Any]:
     """
     Передается массив имен виджетов и путь до json файла.
     :param json_path: Путь до json файла.
@@ -47,3 +47,24 @@ def data_update_from_json(json_path: str, names: List[str]) -> List[Any]:
 
     # Возвращаем значения для каждого имени, если имя не найдено - возвращаем None
     return [data.get(name) for name in names]
+
+
+
+def dict_data_from_json(json_path: str, names: List[str]) -> Dict[str, Any]:
+    """
+    Передается массив имен виджетов и путь до json файла.
+    :param json_path: Путь до json файла.
+    :param names: Имена виджетов.
+    :return: Словарь с ключами - именами виджетов и значениями из JSON
+    """
+    if not os.path.exists(json_path):
+        return {name: None for name in names}
+
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return {name: None for name in names}
+
+    # Возвращаем словарь с ключами - именами виджетов
+    return {name: data.get(name) for name in names}
