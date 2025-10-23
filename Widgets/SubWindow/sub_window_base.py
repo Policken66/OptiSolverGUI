@@ -3,6 +3,7 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QWidget
 
 
+
 class SubWindowBase(QWidget):
     hide_sub_window_signal = Signal()
 
@@ -21,3 +22,5 @@ class SubWindowBase(QWidget):
     def _setup_ui(self):
         pass
 
+    def _save_params(self):
+        pass

@@ -1,0 +1,1 @@
+JSON_WIDGET_SETTINGS: str = "Resources/Configs/widget_settings.json"

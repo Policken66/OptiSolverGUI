@@ -1,18 +1,40 @@
 from PySide6.QtWidgets import QDoubleSpinBox
 
+from Consts import JSON_WIDGET_SETTINGS
+from FileManager import file_manager
 from Widgets.SubWindow.sub_window_base import SubWindowBase
 
 
 class SubWindowEdgeStructureParams(SubWindowBase):
     def __init__(self):
         super().__init__()
+        self.widget_names = [
+            "doubleSpinBox_a_sp", "doubleSpinBox_b_sp",
+            "doubleSpinBox_a_ring", "doubleSpinBox_b_ring",
+            "doubleSpinBox_a_shp", "doubleSpinBox_b_shp"
+        ]
+        self.widgets = {}  # Словарь для хранения виджетов
 
     def _setup_ui(self):
-        self.doubleSpinBox_a_sp : QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_sp")
-        self.doubleSpinBox_b_sp : QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_sp")
+        # Находим и сохраняем все виджеты
+        for widget_name in self.widget_names:
+            widget = self.findChild(QDoubleSpinBox, widget_name)
+            if widget:
+                self.widgets[widget_name] = widget
+                setattr(self, widget_name, widget)  # Для обратной совместимости
 
-        self.doubleSpinBox_a_ring: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_ring")
-        self.doubleSpinBox_b_ring: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_ring")
+        self._load_params()
 
-        self.doubleSpinBox_a_shp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_shp")
-        self.doubleSpinBox_b_shp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_shp")
+    def _save_params(self):
+        data = []
+        for widget_name, widget in self.widgets.items():
+            data.append((widget_name, widget.value()))
+
+        file_manager.json_update(JSON_WIDGET_SETTINGS, data)
+
+    def _load_params(self):
+        values = file_manager.data_update_from_json(JSON_WIDGET_SETTINGS, self.widget_names)
+
+        for widget_name, value in zip(self.widget_names, values):
+            if value is not None and widget_name in self.widgets:
+                self.widgets[widget_name].setValue(value)
