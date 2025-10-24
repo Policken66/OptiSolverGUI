@@ -116,6 +116,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             self.subWindow_calculated_params: self.pushButton_calculated_params,
             self.subWindow_generator: self.pushButton_generator,
             self.subWindow_solver: self.pushButton_solver,
+            self.subWindow_image_viewer: self.pushButton_image_viewer,
         }
 
     def _sub_window_setup_ui(self):

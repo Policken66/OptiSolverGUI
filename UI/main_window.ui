@@ -145,10 +145,35 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="subwindow_5">
+      <widget class="QWidget" name="subwindow_image_viewer">
        <property name="windowTitle">
         <string>Результаты расчета</string>
        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="pushButton_image_viewer">
+          <property name="text">
+           <string>Просмотр изображений</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -1695,6 +1720,37 @@
         </item>
        </layout>
       </widget>
+      <widget class="SubWindowImageViewer" name="subWindow_image_viewer">
+       <property name="windowTitle">
+        <string>Просмотр изображений</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="pushButton_load_images">
+          <property name="text">
+           <string>Загрузить изображения</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_select_image">
+          <item>
+           <widget class="QLabel" name="label_select_image">
+            <property name="text">
+             <string>Изображения:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_select_images"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGraphicsView" name="graphicsView_image_viewer"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1757,6 +1813,12 @@
    <class>SubWindowSolver</class>
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_solver</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowImageViewer</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_image_viewer</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

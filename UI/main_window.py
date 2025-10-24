@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QGroupBox,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QMdiArea, QPlainTextEdit, QPushButton, QSizePolicy,
-    QSpacerItem, QStatusBar, QToolButton, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QGraphicsView,
+    QGroupBox, QHBoxLayout, QLabel, QLineEdit,
+    QMainWindow, QMdiArea, QPlainTextEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QStatusBar, QToolButton,
+    QVBoxLayout, QWidget)
 
 from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
@@ -29,6 +29,7 @@ from Widgets.SubWindow.sub_window_construction_params import SubWindowConstructi
 from Widgets.SubWindow.sub_window_edge_structure_params import SubWindowEdgeStructureParams
 from Widgets.SubWindow.sub_window_generator import SubWindowGenerator
 from Widgets.SubWindow.sub_window_geometric_params import SubWindowGeometricParams
+from Widgets.SubWindow.sub_window_image_viewer import SubWindowImageViewer
 from Widgets.SubWindow.sub_window_physical_mechanical_params import SubWindowPhysicalMechanicalParams
 from Widgets.SubWindow.sub_window_solver import SubWindowSolver
 
@@ -111,9 +112,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
         self.mdiArea_toolbox.addSubWindow(self.subWindow_prepare_solver)
-        self.subwindow_5 = QWidget()
-        self.subwindow_5.setObjectName(u"subwindow_5")
-        self.mdiArea_toolbox.addSubWindow(self.subwindow_5)
+        self.subwindow_image_viewer = QWidget()
+        self.subwindow_image_viewer.setObjectName(u"subwindow_image_viewer")
+        self.horizontalLayout_3 = QHBoxLayout(self.subwindow_image_viewer)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.pushButton_image_viewer = QPushButton(self.subwindow_image_viewer)
+        self.pushButton_image_viewer.setObjectName(u"pushButton_image_viewer")
+        self.pushButton_image_viewer.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_image_viewer)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+
+        self.mdiArea_toolbox.addSubWindow(self.subwindow_image_viewer)
 
         self.verticalLayout.addWidget(self.mdiArea_toolbox)
 
@@ -1161,6 +1174,36 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.plainTextEdit_log_solver)
 
         self.mdiArea.addSubWindow(self.subWindow_solver)
+        self.subWindow_image_viewer = SubWindowImageViewer()
+        self.subWindow_image_viewer.setObjectName(u"subWindow_image_viewer")
+        self.verticalLayout_4 = QVBoxLayout(self.subWindow_image_viewer)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.pushButton_load_images = QPushButton(self.subWindow_image_viewer)
+        self.pushButton_load_images.setObjectName(u"pushButton_load_images")
+
+        self.verticalLayout_4.addWidget(self.pushButton_load_images)
+
+        self.horizontalLayout_select_image = QHBoxLayout()
+        self.horizontalLayout_select_image.setObjectName(u"horizontalLayout_select_image")
+        self.label_select_image = QLabel(self.subWindow_image_viewer)
+        self.label_select_image.setObjectName(u"label_select_image")
+
+        self.horizontalLayout_select_image.addWidget(self.label_select_image)
+
+        self.comboBox_select_images = QComboBox(self.subWindow_image_viewer)
+        self.comboBox_select_images.setObjectName(u"comboBox_select_images")
+
+        self.horizontalLayout_select_image.addWidget(self.comboBox_select_images)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_select_image)
+
+        self.graphicsView_image_viewer = QGraphicsView(self.subWindow_image_viewer)
+        self.graphicsView_image_viewer.setObjectName(u"graphicsView_image_viewer")
+
+        self.verticalLayout_4.addWidget(self.graphicsView_image_viewer)
+
+        self.mdiArea.addSubWindow(self.subWindow_image_viewer)
 
         self.verticalLayout.addWidget(self.mdiArea)
 
@@ -1185,7 +1228,8 @@ class Ui_MainWindow(object):
         self.subWindow_prepare_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0440\u0435\u0448\u0435\u043d\u0438\u044f", None))
         self.pushButton_generator.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
         self.pushButton_solver.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
-        self.subwindow_5.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
+        self.subwindow_image_viewer.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
+        self.pushButton_image_viewer.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439", None))
         self.subWindow_geometric_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.label_R1.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0434\u0438\u0443\u0441 \u0432\u0435\u0440\u0445\u043d\u0435\u0439 \u043a\u0440\u043e\u043c\u043a\u0438", None))
         self.label_R2.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0434\u0438\u0443\u0441 \u043d\u0438\u0436\u043d\u0435\u0439 \u043a\u0440\u043e\u043c\u043a\u0438", None))
@@ -1261,5 +1305,8 @@ class Ui_MainWindow(object):
         self.subWindow_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
         self.pushButton_start_solver.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0443\u0441\u043a \u0440\u0435\u0448\u0430\u0442\u0435\u043b\u044f", None))
         self.label_log_solver.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0439\u043b\u044b-\u043b\u043e\u0433\u043e\u0432:", None))
+        self.subWindow_image_viewer.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439", None))
+        self.pushButton_load_images.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f", None))
+        self.label_select_image.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f:", None))
     # retranslateUi
 
