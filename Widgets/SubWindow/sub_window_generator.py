@@ -1,5 +1,5 @@
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QPushButton, QPlainTextEdit, QLineEdit, QToolButton
+from PySide6.QtWidgets import QPushButton, QPlainTextEdit, QLineEdit, QToolButton, QFileDialog
 
 import Consts
 from FileManager import file_manager
@@ -32,7 +32,14 @@ class SubWindowGenerator(SubWindowBase):
         self._convert_params()
 
     def toolButton_select_work_dir_clicked(self):
-        print("ddd")
+        work_dir = QFileDialog.getExistingDirectory(
+            self,
+            "Выберите рабочую директорию",
+            ""  # начальный путь
+        )
+
+        if work_dir:
+            self.lineEdit_work_dir.setText(work_dir)
 
     def _convert_params(self):
         names = ["doubleSpinBox_a_sp", "doubleSpinBox_b_sp", "doubleSpinBox_a_ring",

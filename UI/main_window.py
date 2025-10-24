@@ -29,6 +29,7 @@ from Widgets.SubWindow.sub_window_edge_structure_params import SubWindowEdgeStru
 from Widgets.SubWindow.sub_window_generator import SubWindowGenerator
 from Widgets.SubWindow.sub_window_geometric_params import SubWindowGeometricParams
 from Widgets.SubWindow.sub_window_physical_mechanical_params import SubWindowPhysicalMechanicalParams
+from Widgets.SubWindow.sub_window_solver import SubWindowSolver
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -97,6 +98,12 @@ class Ui_MainWindow(object):
         self.pushButton_generator.setCheckable(True)
 
         self.horizontalLayout_2.addWidget(self.pushButton_generator)
+
+        self.pushButton_solver = QPushButton(self.subWindow_prepare_solver)
+        self.pushButton_solver.setObjectName(u"pushButton_solver")
+        self.pushButton_solver.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_solver)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -1123,6 +1130,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.pushButton_start_generation)
 
         self.mdiArea.addSubWindow(self.subWindow_generator)
+        self.subWindow_solver = SubWindowSolver()
+        self.subWindow_solver.setObjectName(u"subWindow_solver")
+        self.verticalLayout_3 = QVBoxLayout(self.subWindow_solver)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.pushButton_start_solver = QPushButton(self.subWindow_solver)
+        self.pushButton_start_solver.setObjectName(u"pushButton_start_solver")
+
+        self.verticalLayout_3.addWidget(self.pushButton_start_solver)
+
+        self.plainTextEdit_log_solver = QPlainTextEdit(self.subWindow_solver)
+        self.plainTextEdit_log_solver.setObjectName(u"plainTextEdit_log_solver")
+
+        self.verticalLayout_3.addWidget(self.plainTextEdit_log_solver)
+
+        self.mdiArea.addSubWindow(self.subWindow_solver)
 
         self.verticalLayout.addWidget(self.mdiArea)
 
@@ -1146,6 +1168,7 @@ class Ui_MainWindow(object):
         self.pushButton_calculated_params.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.subWindow_prepare_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0440\u0435\u0448\u0435\u043d\u0438\u044f", None))
         self.pushButton_generator.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
+        self.pushButton_solver.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
         self.subwindow_5.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
         self.subWindow_geometric_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.label_R1.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0434\u0438\u0443\u0441 \u0432\u0435\u0440\u0445\u043d\u0435\u0439 \u043a\u0440\u043e\u043c\u043a\u0438", None))
@@ -1219,5 +1242,7 @@ class Ui_MainWindow(object):
         self.label_work_dir.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0431\u043e\u0447\u0430\u044f \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0438\u044f:", None))
         self.toolButton_select_work_dir.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_start_generation.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f APDL", None))
+        self.subWindow_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
+        self.pushButton_start_solver.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0443\u0441\u043a \u0440\u0435\u0448\u0430\u0442\u0435\u043b\u044f", None))
     # retranslateUi
 

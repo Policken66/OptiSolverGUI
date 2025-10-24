@@ -121,6 +121,16 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="pushButton_solver">
+          <property name="text">
+           <string>Решатель</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Orientation::Horizontal</enum>
@@ -1654,6 +1664,23 @@
         </item>
        </layout>
       </widget>
+      <widget class="SubWindowSolver" name="subWindow_solver">
+       <property name="windowTitle">
+        <string>Решатель</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QPushButton" name="pushButton_start_solver">
+          <property name="text">
+           <string>Запуск решателя</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_log_solver"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1710,6 +1737,12 @@
    <class>SubWindowGenerator</class>
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_generator</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowSolver</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_solver</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
