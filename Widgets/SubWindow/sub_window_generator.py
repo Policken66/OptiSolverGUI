@@ -1,5 +1,5 @@
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QPushButton, QPlainTextEdit
+from PySide6.QtWidgets import QPushButton, QPlainTextEdit, QLineEdit, QToolButton
 
 import Consts
 from FileManager import file_manager
@@ -11,16 +11,28 @@ class SubWindowGenerator(SubWindowBase):
 
     def __init__(self):
         super().__init__()
+        self.widget_names = [
+            "lineEdit_work_dir"
+        ]
 
     def _setup_ui(self):
         self.pushButton_start_generation: QPushButton = self.findChild(QPushButton, "pushButton_start_generation")
         self.plainTextEdit_generator: QPlainTextEdit = self.findChild(QPlainTextEdit, "plainTextEdit_generator")
         self.plainTextEdit_generator.setReadOnly(True)
+        self.lineEdit_work_dir: QLineEdit = self.findChild(QLineEdit, "lineEdit_work_dir")
+        self.toolButton_select_work_dir: QToolButton = self.findChild(QToolButton, "toolButton_select_work_dir")
+
         self.pushButton_start_generation.clicked.connect(self.pushButton_start_generation_clicked)
+        self.toolButton_select_work_dir.clicked.connect(self.toolButton_select_work_dir_clicked)
+
+        self._load_params()
 
     def pushButton_start_generation_clicked(self):
         self.start_generation_signal.emit()
         self._convert_params()
+
+    def toolButton_select_work_dir_clicked(self):
+        print("ddd")
 
     def _convert_params(self):
         names = ["doubleSpinBox_a_sp", "doubleSpinBox_b_sp", "doubleSpinBox_a_ring",
@@ -62,3 +74,12 @@ class SubWindowGenerator(SubWindowBase):
 
         template_text = file_manager.get_all_text(Consts.TEMPLATE_TXT)
         self.plainTextEdit_generator.setPlainText(template_text)
+
+    def _save_params(self):
+        data = []
+        data.append(("lineEdit_work_dir", self.lineEdit_work_dir.text()))
+        file_manager.json_update(Consts.JSON_WIDGET_SETTINGS, data)
+
+    def _load_params(self):
+        values = file_manager.data_from_json(Consts.JSON_WIDGET_SETTINGS, self.widget_names)
+        self.lineEdit_work_dir.setText(values[0])

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1009</width>
-    <height>773</height>
+    <width>1025</width>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1617,6 +1617,31 @@
         <string>Генератор</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_work_dir">
+          <item>
+           <widget class="QLabel" name="label_work_dir">
+            <property name="text">
+             <string>Рабочая директория:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_select_work_dir">
+            <item>
+             <widget class="QLineEdit" name="lineEdit_work_dir"/>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_select_work_dir">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
         <item>
          <widget class="QPlainTextEdit" name="plainTextEdit_generator"/>
         </item>
