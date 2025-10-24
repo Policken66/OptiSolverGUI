@@ -1677,6 +1677,20 @@
          </widget>
         </item>
         <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_log_solver">
+          <item>
+           <widget class="QLabel" name="label_log_solver">
+            <property name="text">
+             <string>Файлы-логов:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_log_solver"/>
+          </item>
+         </layout>
+        </item>
+        <item>
          <widget class="QPlainTextEdit" name="plainTextEdit_log_solver"/>
         </item>
        </layout>

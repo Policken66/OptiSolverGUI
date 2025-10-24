@@ -15,10 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDoubleSpinBox, QGroupBox, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QMdiArea,
-    QPlainTextEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QStatusBar, QToolButton, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QGroupBox,
+    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
+    QMdiArea, QPlainTextEdit, QPushButton, QSizePolicy,
+    QSpacerItem, QStatusBar, QToolButton, QVBoxLayout,
+    QWidget)
 
 from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
@@ -1139,6 +1140,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.pushButton_start_solver)
 
+        self.horizontalLayout_log_solver = QHBoxLayout()
+        self.horizontalLayout_log_solver.setObjectName(u"horizontalLayout_log_solver")
+        self.label_log_solver = QLabel(self.subWindow_solver)
+        self.label_log_solver.setObjectName(u"label_log_solver")
+
+        self.horizontalLayout_log_solver.addWidget(self.label_log_solver)
+
+        self.comboBox_log_solver = QComboBox(self.subWindow_solver)
+        self.comboBox_log_solver.setObjectName(u"comboBox_log_solver")
+
+        self.horizontalLayout_log_solver.addWidget(self.comboBox_log_solver)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_log_solver)
+
         self.plainTextEdit_log_solver = QPlainTextEdit(self.subWindow_solver)
         self.plainTextEdit_log_solver.setObjectName(u"plainTextEdit_log_solver")
 
@@ -1244,5 +1260,6 @@ class Ui_MainWindow(object):
         self.pushButton_start_generation.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f APDL", None))
         self.subWindow_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
         self.pushButton_start_solver.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0443\u0441\u043a \u0440\u0435\u0448\u0430\u0442\u0435\u043b\u044f", None))
+        self.label_log_solver.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0439\u043b\u044b-\u043b\u043e\u0433\u043e\u0432:", None))
     # retranslateUi
 
