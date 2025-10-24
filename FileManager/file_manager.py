@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from typing import Any, List, Tuple, Dict
 
 
@@ -49,7 +50,6 @@ def data_from_json(json_path: str, names: List[str]) -> List[Any]:
     return [data.get(name) for name in names]
 
 
-
 def dict_data_from_json(json_path: str, names: List[str]) -> Dict[str, Any]:
     """
     Передается массив имен виджетов и путь до json файла.
@@ -68,3 +68,37 @@ def dict_data_from_json(json_path: str, names: List[str]) -> Dict[str, Any]:
 
     # Возвращаем словарь с ключами - именами виджетов
     return {name: data.get(name) for name in names}
+
+
+def extract_parameters_from_json(file_path: str) -> Dict[str, Any]:
+    with open(file_path, 'r', encoding='utf-8') as file:
+        parameters = json.load(file)
+    return parameters
+
+
+def change_params_in_template(template_path: str, data_dict: Dict[str, Any]) -> bool:
+    lines = []
+    with open(template_path, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    new_lines = []
+    for l in lines:
+        new_line = l
+        for n in data_dict.keys():
+            if str(n) + "=" in l:
+                new_line = re.sub(f"{n}=[^\\s!]+", f"{n}={data_dict[n]}", l)
+                break
+        new_lines.append(new_line)
+
+    with open(template_path, "w", encoding="utf-8") as file:
+        file.writelines(new_lines)
+
+    return True
+
+
+def get_all_text(template_path: str) -> str:
+    lines = []
+    with open(template_path, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    return "".join(lines)

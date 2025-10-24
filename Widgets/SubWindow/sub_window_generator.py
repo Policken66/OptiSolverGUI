@@ -56,3 +56,9 @@ class SubWindowGenerator(SubWindowBase):
         file_manager.json_update(Consts.JSON_APDL_PARAMS, parametrs_for_mapdl_model)
 
         print("Успешная генерация JSON файла")
+
+        params_for_temlate = file_manager.extract_parameters_from_json(Consts.JSON_APDL_PARAMS)
+        file_manager.change_params_in_template(Consts.TEMPLATE_TXT, params_for_temlate)
+
+        template_text = file_manager.get_all_text(Consts.TEMPLATE_TXT)
+        self.plainTextEdit_generator.setPlainText(template_text)
