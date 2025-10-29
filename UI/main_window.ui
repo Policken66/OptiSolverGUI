@@ -131,6 +131,16 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="pushButton_diapasons">
+          <property name="text">
+           <string>Диапазоны</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Orientation::Horizontal</enum>
@@ -1751,6 +1761,20 @@
         </item>
        </layout>
       </widget>
+      <widget class="SubWindowDiapasons" name="subWindow_diapasons">
+       <property name="windowTitle">
+        <string>Диапазоны</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QPushButton" name="pushButton_save_diapasons">
+          <property name="text">
+           <string>Сохранить диапазоны</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1819,6 +1843,12 @@
    <class>SubWindowImageViewer</class>
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_image_viewer</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowDiapasons</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_diapasons</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
