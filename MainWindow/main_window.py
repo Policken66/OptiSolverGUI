@@ -127,3 +127,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
     def _on_request_start_generation(self):
         for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
             sub_window._save_params()
+
+    def closeEvent(self, event, /):
+        for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
+            sub_window._save_params()
