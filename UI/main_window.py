@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -26,6 +26,7 @@ from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechan
 from Widgets.SpinBox.spin_box_quantity import SpinBoxQuantity
 from Widgets.SubWindow.sub_window_calculated_params import SubWindowCalculatedParams
 from Widgets.SubWindow.sub_window_construction_params import SubWindowConstructionParams
+from Widgets.SubWindow.sub_window_diapasons import SubWindowDiapasons
 from Widgets.SubWindow.sub_window_edge_structure_params import SubWindowEdgeStructureParams
 from Widgets.SubWindow.sub_window_generator import SubWindowGenerator
 from Widgets.SubWindow.sub_window_geometric_params import SubWindowGeometricParams
@@ -106,6 +107,12 @@ class Ui_MainWindow(object):
         self.pushButton_solver.setCheckable(True)
 
         self.horizontalLayout_2.addWidget(self.pushButton_solver)
+
+        self.pushButton_diapasons = QPushButton(self.subWindow_prepare_solver)
+        self.pushButton_diapasons.setObjectName(u"pushButton_diapasons")
+        self.pushButton_diapasons.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_diapasons)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -1204,6 +1211,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.graphicsView_image_viewer)
 
         self.mdiArea.addSubWindow(self.subWindow_image_viewer)
+        self.subWindow_diapasons = SubWindowDiapasons()
+        self.subWindow_diapasons.setObjectName(u"subWindow_diapasons")
+        self.verticalLayout_5 = QVBoxLayout(self.subWindow_diapasons)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.pushButton_save_diapasons = QPushButton(self.subWindow_diapasons)
+        self.pushButton_save_diapasons.setObjectName(u"pushButton_save_diapasons")
+
+        self.verticalLayout_5.addWidget(self.pushButton_save_diapasons)
+
+        self.mdiArea.addSubWindow(self.subWindow_diapasons)
 
         self.verticalLayout.addWidget(self.mdiArea)
 
@@ -1228,6 +1245,7 @@ class Ui_MainWindow(object):
         self.subWindow_prepare_solver.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0440\u0435\u0448\u0435\u043d\u0438\u044f", None))
         self.pushButton_generator.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
         self.pushButton_solver.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
+        self.pushButton_diapasons.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
         self.subwindow_image_viewer.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
         self.pushButton_image_viewer.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439", None))
         self.subWindow_geometric_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
@@ -1308,5 +1326,7 @@ class Ui_MainWindow(object):
         self.subWindow_image_viewer.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439", None))
         self.pushButton_load_images.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f", None))
         self.label_select_image.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f:", None))
+        self.subWindow_diapasons.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
+        self.pushButton_save_diapasons.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
     # retranslateUi
 
