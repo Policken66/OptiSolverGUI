@@ -19,7 +19,7 @@ class SubWindowBase(QWidget):
         self.hide_sub_window_signal.emit()
 
     @property
-    def window_id(self)->str:
+    def window_id(self) -> str:
         return self.windowTitle()
 
     def _setup_ui(self):
@@ -97,8 +97,8 @@ class SubWindowBase(QWidget):
         """
         Универсальное сохранение параметров для всех подклассов
         """
-        if widgets is None : return
-        if widget_names is None : return
+        if widgets is None: return
+        if widget_names is None: return
 
         target_widgets = widgets
         target_names = widget_names
@@ -119,8 +119,8 @@ class SubWindowBase(QWidget):
         """
         Универсальная загрузка параметров для всех подклассов
         """
-        if widgets is None : return
-        if widget_names is None : return
+        if widgets is None: return
+        if widget_names is None: return
 
         target_widgets = widgets
         target_names = widget_names

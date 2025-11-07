@@ -49,7 +49,8 @@ class SubWindowGenerator(SubWindowBase):
 
         if work_dir:
             self.lineEdit_work_dir.setText(work_dir)
-#
+
+    #
     def _convert_params(self):
         names = ["doubleSpinBox_a_sp", "doubleSpinBox_b_sp", "doubleSpinBox_a_ring",
                  "doubleSpinBox_b_ring", "doubleSpinBox_a_shp", "doubleSpinBox_b_shp",
@@ -90,4 +91,3 @@ class SubWindowGenerator(SubWindowBase):
 
         template_text = file_manager.get_all_text(Consts.TEMPLATE_TXT)
         self.plainTextEdit_generator.setPlainText(template_text)
-

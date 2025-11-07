@@ -17,5 +17,3 @@ class SubWindowCalculatedParams(SubWindowBase):
             label = self.findChild(QLabel, label_name)
             if label:
                 setattr(self, label_name, label)
-
-

@@ -16,12 +16,14 @@ class SubWindowDiapasons(SubWindowBase):
         self.spinBox_diapasons_N0: QSpinBox = self.findChild(QSpinBox, "spinBox_diapasons_N0")
         self.spinBox_diapasons_Nn: QSpinBox = self.findChild(QSpinBox, "spinBox_diapasons_Nn")
         self.spinBox_diapasons_n: QSpinBox = self.findChild(QSpinBox, "spinBox_diapasons_n")
-        self.doubleSpinBox_diapasons_alp0: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_diapasons_alp0")
-        self.doubleSpinBox_diapasons_alp_k: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_diapasons_alp_k")
-        self.doubleSpinBox_diapasons_n_alp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_diapasons_n_alp")
+        self.doubleSpinBox_diapasons_alp0: QDoubleSpinBox = self.findChild(QDoubleSpinBox,
+                                                                           "doubleSpinBox_diapasons_alp0")
+        self.doubleSpinBox_diapasons_alp_k: QDoubleSpinBox = self.findChild(QDoubleSpinBox,
+                                                                            "doubleSpinBox_diapasons_alp_k")
+        self.doubleSpinBox_diapasons_n_alp: QDoubleSpinBox = self.findChild(QDoubleSpinBox,
+                                                                            "doubleSpinBox_diapasons_n_alp")
         self.checkBox_diapasons_change_b: QCheckBox = self.findChild(QCheckBox, "checkBox_diapasons_change_b")
         self.checkBox_diapasons_change_h: QCheckBox = self.findChild(QCheckBox, "checkBox_diapasons_change_h")
-
 
         # Подключение сигналов
         self.pushButton_save_diapasons.clicked.connect(self.pushButton_save_diapasons_clicked)
@@ -32,10 +34,8 @@ class SubWindowDiapasons(SubWindowBase):
         # Загрузка параметров из JSON
         self.load_params(widgets=self.widgets, widget_names=self.widget_names)
 
-
     def pushButton_save_diapasons_clicked(self):
         print("pushButton_save_diaposons_clicked")
-
 
     def get_widgets_name(self):
         return ["checkBox_diapasons_N", "checkBox_diapasons_alp",

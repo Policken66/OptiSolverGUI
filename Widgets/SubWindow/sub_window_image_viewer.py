@@ -19,6 +19,7 @@ class SubWindowImageViewer(SubWindowBase):
 
         self.pushButton_load_images.clicked.connect(self.pushButton_load_images_clicked)
         self.comboBox_select_images.currentIndexChanged.connect(self.comboBox_select_images_currentIndexChanged)
+
     def pushButton_load_images_clicked(self):
         work_dir = file_manager.dict_data_from_json(Consts.JSON_WIDGET_SETTINGS, ["lineEdit_work_dir"])[
             "lineEdit_work_dir"]
@@ -48,4 +49,3 @@ class SubWindowImageViewer(SubWindowBase):
             # Установить сцену в graphicsView
             self.graphicsView_image_viewer.setScene(scene)
             self.graphicsView_image_viewer.fitInView(scene.itemsBoundingRect(), Qt.KeepAspectRatio)
-

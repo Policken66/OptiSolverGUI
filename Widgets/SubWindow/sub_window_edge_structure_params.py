@@ -43,4 +43,3 @@ class SubWindowEdgeStructureParams(SubWindowBase):
             "doubleSpinBox_a_shp": self.doubleSpinBox_a_shp,
             "doubleSpinBox_b_shp": self.doubleSpinBox_b_shp,
         }
-
