@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 from PySide6.QtWidgets import QPlainTextEdit, QPushButton, QComboBox
-#from ansys.mapdl.core import launch_mapdl
+from ansys.mapdl.core import launch_mapdl
 
 import Consts
 from FileManager import file_manager
@@ -20,7 +20,7 @@ class SubWindowSolver(SubWindowBase):
         self.plainTextEdit_log_solver.setReadOnly(True)
         self.comboBox_log_solver: QComboBox = self.findChild(QComboBox, "comboBox_log_solver")
 
-        #self.pushButton_start_solver.clicked.connect(self.pushButton_start_solver_clicked)
+        self.pushButton_start_solver.clicked.connect(self.pushButton_start_solver_clicked)
         self.comboBox_log_solver.currentIndexChanged.connect(self.comboBox_log_solver_currentIndexChanged)
 
     def pushButton_start_solver_clicked(self):
