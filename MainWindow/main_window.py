@@ -26,6 +26,8 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         for sub, btn in self.sub_to_btn.items():
             sub.hide_sub_window_signal.connect(lambda s=sub: self._on_request_hide(s))
 
+        self.subWindow_generator.start_generation_signal.connect(self._on_request_start_generation)
+
         self.hide_all_sub_windows()
         self._sub_window_setup_ui()
 
@@ -107,13 +109,26 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         :return: Словарь {SubWindowBase: QPushButton}.
         """
         return {
-            self.subWindow_geometric_parameters: self.pushButton_geometric_parameters,
-            self.subWindow_construction_parameters: self.pushButton_construction_parameters,
-            self.subWindow_physical_mechanical_parameters: self.pushButton_physical_mechanical_parameters,
-            self.subWindow_edge_structure_parameters: self.pushButton_edge_structure_parameters,
-            self.subWindow_calculated_parameters: self.pushButton_calculated_peremeters,
+            self.subWindow_geometric_params: self.pushButton_geometric_params,
+            self.subWindow_construction_params: self.pushButton_construction_params,
+            self.subWindow_physical_mechanical_params: self.pushButton_physical_mechanical_params,
+            self.subWindow_edge_structure_params: self.pushButton_edge_structure_params,
+            self.subWindow_calculated_params: self.pushButton_calculated_params,
+            self.subWindow_generator: self.pushButton_generator,
+            self.subWindow_solver: self.pushButton_solver,
+            self.subWindow_image_viewer: self.pushButton_image_viewer,
+            self.subWindow_diapasons: self.pushButton_diapasons,
+            self.subWindow_construction_mass: self.pushButton_construction_mass,
         }
 
     def _sub_window_setup_ui(self):
         for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
             sub_window._setup_ui()
+
+    def _on_request_start_generation(self):
+        for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
+            sub_window.save_params(widgets=sub_window.get_widgets(), widget_names=sub_window.get_widgets_name())
+
+    def closeEvent(self, event, /):
+        for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
+            sub_window.save_params(widgets=sub_window.get_widgets(), widget_names=sub_window.get_widgets_name())
