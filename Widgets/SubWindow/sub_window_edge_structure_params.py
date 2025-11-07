@@ -16,25 +16,31 @@ class SubWindowEdgeStructureParams(SubWindowBase):
         self.widgets = {}  # Словарь для хранения виджетов
 
     def _setup_ui(self):
-        # Находим и сохраняем все виджеты
-        for widget_name in self.widget_names:
-            widget = self.findChild(QDoubleSpinBox, widget_name)
-            if widget:
-                self.widgets[widget_name] = widget
-                setattr(self, widget_name, widget)  # Для обратной совместимости
+        self.doubleSpinBox_a_sp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_sp")
+        self.doubleSpinBox_b_sp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_sp")
+        self.doubleSpinBox_a_ring: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_ring")
+        self.doubleSpinBox_b_ring: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_ring")
+        self.doubleSpinBox_a_shp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_a_shp")
+        self.doubleSpinBox_b_shp: QDoubleSpinBox = self.findChild(QDoubleSpinBox, "doubleSpinBox_b_shp")
 
-        self._load_params()
+        # Для удобства сохраним в списки
+        self.widget_names = self.get_widgets_name()
+        self.widgets = self.get_widgets()
+        # Загрузка параметров из JSON
+        self.load_params(widgets=self.widgets, widget_names=self.widget_names)
 
-    def _save_params(self):
-        data = []
-        for widget_name, widget in self.widgets.items():
-            data.append((widget_name, widget.value()))
+    def get_widgets_name(self):
+        return ["doubleSpinBox_a_sp", "doubleSpinBox_b_sp",
+                "doubleSpinBox_a_ring", "doubleSpinBox_b_ring",
+                "doubleSpinBox_a_shp", "doubleSpinBox_b_shp"]
 
-        file_manager.json_update(JSON_WIDGET_SETTINGS, data)
+    def get_widgets(self):
+        return {
+            "doubleSpinBox_a_sp": self.doubleSpinBox_a_sp,
+            "doubleSpinBox_b_sp": self.doubleSpinBox_b_sp,
+            "doubleSpinBox_a_ring": self.doubleSpinBox_a_ring,
+            "doubleSpinBox_b_ring": self.doubleSpinBox_b_ring,
+            "doubleSpinBox_a_shp": self.doubleSpinBox_a_shp,
+            "doubleSpinBox_b_shp": self.doubleSpinBox_b_shp,
+        }
 
-    def _load_params(self):
-        values = file_manager.data_from_json(JSON_WIDGET_SETTINGS, self.widget_names)
-
-        for widget_name, value in zip(self.widget_names, values):
-            if value is not None and widget_name in self.widgets:
-                self.widgets[widget_name].setValue(value)

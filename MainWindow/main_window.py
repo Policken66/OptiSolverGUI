@@ -118,6 +118,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             self.subWindow_solver: self.pushButton_solver,
             self.subWindow_image_viewer: self.pushButton_image_viewer,
             self.subWindow_diapasons: self.pushButton_diapasons,
+            self.subWindow_construction_mass: self.pushButton_construction_mass,
         }
 
     def _sub_window_setup_ui(self):
@@ -126,8 +127,8 @@ class MainWindow(Ui_MainWindow, QMainWindow):
 
     def _on_request_start_generation(self):
         for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
-            sub_window._save_params()
+            sub_window.save_params(widgets=sub_window.get_widgets(), widget_names=sub_window.get_widgets_name())
 
     def closeEvent(self, event, /):
         for sub_window in self.findChildren(SubWindowBase, QRegularExpression("subWindow_*")):
-            sub_window._save_params()
+            sub_window.save_params(widgets=sub_window.get_widgets(), widget_names=sub_window.get_widgets_name())

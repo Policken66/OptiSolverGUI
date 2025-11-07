@@ -11,9 +11,6 @@ class SubWindowGenerator(SubWindowBase):
 
     def __init__(self):
         super().__init__()
-        self.widget_names = [
-            "lineEdit_work_dir"
-        ]
 
     def _setup_ui(self):
         self.pushButton_start_generation: QPushButton = self.findChild(QPushButton, "pushButton_start_generation")
@@ -25,7 +22,19 @@ class SubWindowGenerator(SubWindowBase):
         self.pushButton_start_generation.clicked.connect(self.pushButton_start_generation_clicked)
         self.toolButton_select_work_dir.clicked.connect(self.toolButton_select_work_dir_clicked)
 
-        self._load_params()
+        # Для удобства сохраним в списки
+        self.widget_names = self.get_widgets_name()
+        self.widgets = self.get_widgets()
+        # Загрузка параметров из JSON
+        self.load_params(widgets=self.widgets, widget_names=self.widget_names)
+
+    def get_widgets_name(self):
+        return ["lineEdit_work_dir"]
+
+    def get_widgets(self):
+        return {
+            "lineEdit_work_dir": self.lineEdit_work_dir,
+        }
 
     def pushButton_start_generation_clicked(self):
         self.start_generation_signal.emit()
@@ -82,11 +91,3 @@ class SubWindowGenerator(SubWindowBase):
         template_text = file_manager.get_all_text(Consts.TEMPLATE_TXT)
         self.plainTextEdit_generator.setPlainText(template_text)
 
-    def _save_params(self):
-        data = []
-        data.append(("lineEdit_work_dir", self.lineEdit_work_dir.text()))
-        file_manager.json_update(Consts.JSON_WIDGET_SETTINGS, data)
-
-    def _load_params(self):
-        values = file_manager.data_from_json(Consts.JSON_WIDGET_SETTINGS, self.widget_names)
-        self.lineEdit_work_dir.setText(values[0])

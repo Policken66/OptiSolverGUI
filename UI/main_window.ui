@@ -141,6 +141,16 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="pushButton_construction_mass">
+          <property name="text">
+           <string>Масса конструкции</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Orientation::Horizontal</enum>
@@ -755,6 +765,33 @@
                </item>
               </layout>
              </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_rho_sp">
+               <item>
+                <widget class="QLabel" name="label_rho_sp">
+                 <property name="text">
+                  <string>p</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_rho_sp">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_rho_sp"/>
+               </item>
+              </layout>
+             </item>
             </layout>
            </item>
           </layout>
@@ -963,6 +1000,33 @@
                </item>
               </layout>
              </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_rho_shp">
+               <item>
+                <widget class="QLabel" name="label_rho_shp">
+                 <property name="text">
+                  <string>p</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_rho_shp">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_rho_shp"/>
+               </item>
+              </layout>
+             </item>
             </layout>
            </item>
           </layout>
@@ -1168,6 +1232,33 @@
                </item>
                <item>
                 <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_v_ring"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_rho_ring">
+               <item>
+                <widget class="QLabel" name="label_rho_ring">
+                 <property name="text">
+                  <string>p</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_rho_ring">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="DoubleSpinBoxMechanical" name="doubleSpinBox_rho_ring"/>
                </item>
               </layout>
              </item>
@@ -1922,16 +2013,16 @@
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_n_alpha">
+             <layout class="QHBoxLayout" name="horizontalLayout_diapasons_n_alp">
               <item>
-               <widget class="QLabel" name="label_n_alpha">
+               <widget class="QLabel" name="label_diapasons_n_alp">
                 <property name="text">
                  <string>n_alpha</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_n_alpha"/>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_diapasons_n_alp"/>
               </item>
              </layout>
             </item>
@@ -1940,16 +2031,16 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_change_b">
+         <layout class="QHBoxLayout" name="horizontalLayout_diapasons_change_b">
           <item>
-           <widget class="QLabel" name="label_change_b">
+           <widget class="QLabel" name="label_diapasons_change_b">
             <property name="text">
              <string>Изменяется толщина (b)</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_change_b">
+           <spacer name="horizontalSpacer_diapasons_change_b">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
@@ -1962,7 +2053,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_change_b">
+           <widget class="QCheckBox" name="checkBox_diapasons_change_b">
             <property name="text">
              <string/>
             </property>
@@ -1971,16 +2062,16 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_change_h">
+         <layout class="QHBoxLayout" name="horizontalLayout_diapasons_change_h">
           <item>
-           <widget class="QLabel" name="label_change_h">
+           <widget class="QLabel" name="label_diapasons_change_h">
             <property name="text">
              <string>Изменяется высота (h)</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_change_h">
+           <spacer name="horizontalSpacer_diapasons_change_h">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
@@ -1993,7 +2084,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_change_h">
+           <widget class="QCheckBox" name="checkBox_diapasons_change_h">
             <property name="text">
              <string/>
             </property>
@@ -2007,6 +2098,81 @@
            <string>Сохранить диапазоны</string>
           </property>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="SubWindowConstructionMass" name="subWindow_construction_mass">
+       <property name="minimumSize">
+        <size>
+         <width>240</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="windowTitle">
+        <string>Масса конструкции</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_constMass_Mc">
+          <item>
+           <widget class="QLabel" name="label_constMass_Mc">
+            <property name="text">
+             <string>Мс</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_constMass_Mc">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_constMass_Mc">
+            <property name="text">
+             <string>- постоянная</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_constMass_M">
+          <item>
+           <widget class="QLabel" name="label_constMass_M">
+            <property name="text">
+             <string>М</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_constMass_M">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_constMass_M">
+            <property name="text">
+             <string>- не фиксирована</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -2084,6 +2250,12 @@
    <class>SubWindowDiapasons</class>
    <extends>QWidget</extends>
    <header>Widgets/SubWindow/sub_window_diapasons</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SubWindowConstructionMass</class>
+   <extends>QWidget</extends>
+   <header>Widgets/SubWindow/sub_window_construction_mass</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -25,6 +25,7 @@ from Widgets.DoubleSpinBox.double_spin_box_geometry import DoubleSpinBoxGeometry
 from Widgets.DoubleSpinBox.double_spin_box_mechanical import DoubleSpinBoxMechanical
 from Widgets.SpinBox.spin_box_quantity import SpinBoxQuantity
 from Widgets.SubWindow.sub_window_calculated_params import SubWindowCalculatedParams
+from Widgets.SubWindow.sub_window_construction_mass import SubWindowConstructionMass
 from Widgets.SubWindow.sub_window_construction_params import SubWindowConstructionParams
 from Widgets.SubWindow.sub_window_diapasons import SubWindowDiapasons
 from Widgets.SubWindow.sub_window_edge_structure_params import SubWindowEdgeStructureParams
@@ -113,6 +114,12 @@ class Ui_MainWindow(object):
         self.pushButton_diapasons.setCheckable(True)
 
         self.horizontalLayout_2.addWidget(self.pushButton_diapasons)
+
+        self.pushButton_construction_mass = QPushButton(self.subWindow_prepare_solver)
+        self.pushButton_construction_mass.setObjectName(u"pushButton_construction_mass")
+        self.pushButton_construction_mass.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_construction_mass)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -508,6 +515,25 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_sp.addLayout(self.horizontalLayout_v_sp)
 
+        self.horizontalLayout_rho_sp = QHBoxLayout()
+        self.horizontalLayout_rho_sp.setObjectName(u"horizontalLayout_rho_sp")
+        self.label_rho_sp = QLabel(self.groupBox_sp)
+        self.label_rho_sp.setObjectName(u"label_rho_sp")
+
+        self.horizontalLayout_rho_sp.addWidget(self.label_rho_sp)
+
+        self.horizontalSpacer_rho_sp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_rho_sp.addItem(self.horizontalSpacer_rho_sp)
+
+        self.doubleSpinBox_rho_sp = DoubleSpinBoxMechanical(self.groupBox_sp)
+        self.doubleSpinBox_rho_sp.setObjectName(u"doubleSpinBox_rho_sp")
+
+        self.horizontalLayout_rho_sp.addWidget(self.doubleSpinBox_rho_sp)
+
+
+        self.verticalLayout_sp.addLayout(self.horizontalLayout_rho_sp)
+
 
         self.verticalLayout_12.addLayout(self.verticalLayout_sp)
 
@@ -655,6 +681,25 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_shp.addLayout(self.horizontalLayout_v_shp)
 
+        self.horizontalLayout_rho_shp = QHBoxLayout()
+        self.horizontalLayout_rho_shp.setObjectName(u"horizontalLayout_rho_shp")
+        self.label_rho_shp = QLabel(self.groupBox_shp)
+        self.label_rho_shp.setObjectName(u"label_rho_shp")
+
+        self.horizontalLayout_rho_shp.addWidget(self.label_rho_shp)
+
+        self.horizontalSpacer_rho_shp = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_rho_shp.addItem(self.horizontalSpacer_rho_shp)
+
+        self.doubleSpinBox_rho_shp = DoubleSpinBoxMechanical(self.groupBox_shp)
+        self.doubleSpinBox_rho_shp.setObjectName(u"doubleSpinBox_rho_shp")
+
+        self.horizontalLayout_rho_shp.addWidget(self.doubleSpinBox_rho_shp)
+
+
+        self.verticalLayout_shp.addLayout(self.horizontalLayout_rho_shp)
+
 
         self.verticalLayout_13.addLayout(self.verticalLayout_shp)
 
@@ -801,6 +846,25 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_ring.addLayout(self.horizontalLayout_v_ring)
+
+        self.horizontalLayout_rho_ring = QHBoxLayout()
+        self.horizontalLayout_rho_ring.setObjectName(u"horizontalLayout_rho_ring")
+        self.label_rho_ring = QLabel(self.groupBox_ring)
+        self.label_rho_ring.setObjectName(u"label_rho_ring")
+
+        self.horizontalLayout_rho_ring.addWidget(self.label_rho_ring)
+
+        self.horizontalSpacer_rho_ring = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_rho_ring.addItem(self.horizontalSpacer_rho_ring)
+
+        self.doubleSpinBox_rho_ring = DoubleSpinBoxMechanical(self.groupBox_ring)
+        self.doubleSpinBox_rho_ring.setObjectName(u"doubleSpinBox_rho_ring")
+
+        self.horizontalLayout_rho_ring.addWidget(self.doubleSpinBox_rho_ring)
+
+
+        self.verticalLayout_ring.addLayout(self.horizontalLayout_rho_ring)
 
 
         self.verticalLayout_16.addLayout(self.verticalLayout_ring)
@@ -1337,20 +1401,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_diapasons_alp.addLayout(self.horizontalLayout_diapasons_alp_k)
 
-        self.horizontalLayout_n_alpha = QHBoxLayout()
-        self.horizontalLayout_n_alpha.setObjectName(u"horizontalLayout_n_alpha")
-        self.label_n_alpha = QLabel(self.subWindow_diapasons)
-        self.label_n_alpha.setObjectName(u"label_n_alpha")
+        self.horizontalLayout_diapasons_n_alp = QHBoxLayout()
+        self.horizontalLayout_diapasons_n_alp.setObjectName(u"horizontalLayout_diapasons_n_alp")
+        self.label_diapasons_n_alp = QLabel(self.subWindow_diapasons)
+        self.label_diapasons_n_alp.setObjectName(u"label_diapasons_n_alp")
 
-        self.horizontalLayout_n_alpha.addWidget(self.label_n_alpha)
+        self.horizontalLayout_diapasons_n_alp.addWidget(self.label_diapasons_n_alp)
 
-        self.doubleSpinBox_n_alpha = QDoubleSpinBox(self.subWindow_diapasons)
-        self.doubleSpinBox_n_alpha.setObjectName(u"doubleSpinBox_n_alpha")
+        self.doubleSpinBox_diapasons_n_alp = QDoubleSpinBox(self.subWindow_diapasons)
+        self.doubleSpinBox_diapasons_n_alp.setObjectName(u"doubleSpinBox_diapasons_n_alp")
 
-        self.horizontalLayout_n_alpha.addWidget(self.doubleSpinBox_n_alpha)
+        self.horizontalLayout_diapasons_n_alp.addWidget(self.doubleSpinBox_diapasons_n_alp)
 
 
-        self.verticalLayout_diapasons_alp.addLayout(self.horizontalLayout_n_alpha)
+        self.verticalLayout_diapasons_alp.addLayout(self.horizontalLayout_diapasons_n_alp)
 
 
         self.horizontalLayout_diapasons_alp.addLayout(self.verticalLayout_diapasons_alp)
@@ -1358,43 +1422,43 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_diapasons_alp)
 
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label = QLabel(self.subWindow_diapasons)
-        self.label.setObjectName(u"label")
+        self.horizontalLayout_diapasons_change_b = QHBoxLayout()
+        self.horizontalLayout_diapasons_change_b.setObjectName(u"horizontalLayout_diapasons_change_b")
+        self.label_diapasons_change_b = QLabel(self.subWindow_diapasons)
+        self.label_diapasons_change_b.setObjectName(u"label_diapasons_change_b")
 
-        self.horizontalLayout_7.addWidget(self.label)
+        self.horizontalLayout_diapasons_change_b.addWidget(self.label_diapasons_change_b)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_diapasons_change_b = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_7.addItem(self.horizontalSpacer_3)
+        self.horizontalLayout_diapasons_change_b.addItem(self.horizontalSpacer_diapasons_change_b)
 
-        self.checkBox = QCheckBox(self.subWindow_diapasons)
-        self.checkBox.setObjectName(u"checkBox")
+        self.checkBox_diapasons_change_b = QCheckBox(self.subWindow_diapasons)
+        self.checkBox_diapasons_change_b.setObjectName(u"checkBox_diapasons_change_b")
 
-        self.horizontalLayout_7.addWidget(self.checkBox)
-
-
-        self.verticalLayout_5.addLayout(self.horizontalLayout_7)
-
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.label_2 = QLabel(self.subWindow_diapasons)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout_8.addWidget(self.label_2)
-
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_8.addItem(self.horizontalSpacer_4)
-
-        self.checkBox_2 = QCheckBox(self.subWindow_diapasons)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-
-        self.horizontalLayout_8.addWidget(self.checkBox_2)
+        self.horizontalLayout_diapasons_change_b.addWidget(self.checkBox_diapasons_change_b)
 
 
-        self.verticalLayout_5.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_diapasons_change_b)
+
+        self.horizontalLayout_diapasons_change_h = QHBoxLayout()
+        self.horizontalLayout_diapasons_change_h.setObjectName(u"horizontalLayout_diapasons_change_h")
+        self.label_diapasons_change_h = QLabel(self.subWindow_diapasons)
+        self.label_diapasons_change_h.setObjectName(u"label_diapasons_change_h")
+
+        self.horizontalLayout_diapasons_change_h.addWidget(self.label_diapasons_change_h)
+
+        self.horizontalSpacer_diapasons_change_h = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_diapasons_change_h.addItem(self.horizontalSpacer_diapasons_change_h)
+
+        self.checkBox_diapasons_change_h = QCheckBox(self.subWindow_diapasons)
+        self.checkBox_diapasons_change_h.setObjectName(u"checkBox_diapasons_change_h")
+
+        self.horizontalLayout_diapasons_change_h.addWidget(self.checkBox_diapasons_change_h)
+
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_diapasons_change_h)
 
         self.pushButton_save_diapasons = QPushButton(self.subWindow_diapasons)
         self.pushButton_save_diapasons.setObjectName(u"pushButton_save_diapasons")
@@ -1402,6 +1466,50 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.pushButton_save_diapasons)
 
         self.mdiArea.addSubWindow(self.subWindow_diapasons)
+        self.subWindow_construction_mass = SubWindowConstructionMass()
+        self.subWindow_construction_mass.setObjectName(u"subWindow_construction_mass")
+        self.subWindow_construction_mass.setMinimumSize(QSize(240, 0))
+        self.verticalLayout_6 = QVBoxLayout(self.subWindow_construction_mass)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.horizontalLayout_constMass_Mc = QHBoxLayout()
+        self.horizontalLayout_constMass_Mc.setObjectName(u"horizontalLayout_constMass_Mc")
+        self.label_constMass_Mc = QLabel(self.subWindow_construction_mass)
+        self.label_constMass_Mc.setObjectName(u"label_constMass_Mc")
+
+        self.horizontalLayout_constMass_Mc.addWidget(self.label_constMass_Mc)
+
+        self.horizontalSpacer_constMass_Mc = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_constMass_Mc.addItem(self.horizontalSpacer_constMass_Mc)
+
+        self.checkBox_constMass_Mc = QCheckBox(self.subWindow_construction_mass)
+        self.checkBox_constMass_Mc.setObjectName(u"checkBox_constMass_Mc")
+
+        self.horizontalLayout_constMass_Mc.addWidget(self.checkBox_constMass_Mc)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_constMass_Mc)
+
+        self.horizontalLayout_constMass_M = QHBoxLayout()
+        self.horizontalLayout_constMass_M.setObjectName(u"horizontalLayout_constMass_M")
+        self.label_constMass_M = QLabel(self.subWindow_construction_mass)
+        self.label_constMass_M.setObjectName(u"label_constMass_M")
+
+        self.horizontalLayout_constMass_M.addWidget(self.label_constMass_M)
+
+        self.horizontalSpacer_constMass_M = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_constMass_M.addItem(self.horizontalSpacer_constMass_M)
+
+        self.checkBox_constMass_M = QCheckBox(self.subWindow_construction_mass)
+        self.checkBox_constMass_M.setObjectName(u"checkBox_constMass_M")
+
+        self.horizontalLayout_constMass_M.addWidget(self.checkBox_constMass_M)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_constMass_M)
+
+        self.mdiArea.addSubWindow(self.subWindow_construction_mass)
 
         self.verticalLayout.addWidget(self.mdiArea)
 
@@ -1427,6 +1535,7 @@ class Ui_MainWindow(object):
         self.pushButton_generator.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440", None))
         self.pushButton_solver.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0448\u0430\u0442\u0435\u043b\u044c", None))
         self.pushButton_diapasons.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
+        self.pushButton_construction_mass.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0441\u0441\u0430 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
         self.subwindow_image_viewer.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0440\u0430\u0441\u0447\u0435\u0442\u0430", None))
         self.pushButton_image_viewer.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439", None))
         self.subWindow_geometric_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
@@ -1453,6 +1562,7 @@ class Ui_MainWindow(object):
         self.label_Gyz_sp.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
         self.label_Gxz_sp.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
         self.label_v_sp.setText(QCoreApplication.translate("MainWindow", u"v", None))
+        self.label_rho_sp.setText(QCoreApplication.translate("MainWindow", u"p", None))
         self.groupBox_shp.setTitle(QCoreApplication.translate("MainWindow", u"\u0428\u043f\u0430\u043d\u0433\u043e\u0443\u0442", None))
         self.label_Ex_shp.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
         self.label_Ey_shp.setText(QCoreApplication.translate("MainWindow", u"E_y", None))
@@ -1461,6 +1571,7 @@ class Ui_MainWindow(object):
         self.label_Gyz_shp.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
         self.label_Gxz_shp.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
         self.label_v_shp.setText(QCoreApplication.translate("MainWindow", u"v", None))
+        self.label_rho_shp.setText(QCoreApplication.translate("MainWindow", u"p", None))
         self.groupBox_ring.setTitle(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u044b\u0435 \u0440\u0435\u0431\u0440\u0430", None))
         self.label_Ex_ring.setText(QCoreApplication.translate("MainWindow", u"E_x", None))
         self.label_Ey_ring.setText(QCoreApplication.translate("MainWindow", u"E_y", None))
@@ -1469,6 +1580,7 @@ class Ui_MainWindow(object):
         self.label_Gyz_ring.setText(QCoreApplication.translate("MainWindow", u"G_yz", None))
         self.label_Gxz_ring.setText(QCoreApplication.translate("MainWindow", u"G_xz", None))
         self.label_v_ring.setText(QCoreApplication.translate("MainWindow", u"v", None))
+        self.label_rho_ring.setText(QCoreApplication.translate("MainWindow", u"p", None))
         self.subWindow_calculated_params.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.label_M1.setText(QCoreApplication.translate("MainWindow", u"M_1", None))
         self.label_value_M1.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
@@ -1517,11 +1629,16 @@ class Ui_MainWindow(object):
         self.checkBox_diapasons_alp.setText("")
         self.label_diapasons_alp0.setText(QCoreApplication.translate("MainWindow", u"alpha_0", None))
         self.label_diapasons_alp_k.setText(QCoreApplication.translate("MainWindow", u"alpha_k", None))
-        self.label_n_alpha.setText(QCoreApplication.translate("MainWindow", u"n_alpha", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u0449\u0438\u043d\u0430 (b)", None))
-        self.checkBox.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0432\u044b\u0441\u043e\u0442\u0430 (h)", None))
-        self.checkBox_2.setText("")
+        self.label_diapasons_n_alp.setText(QCoreApplication.translate("MainWindow", u"n_alpha", None))
+        self.label_diapasons_change_b.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u0449\u0438\u043d\u0430 (b)", None))
+        self.checkBox_diapasons_change_b.setText("")
+        self.label_diapasons_change_h.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0432\u044b\u0441\u043e\u0442\u0430 (h)", None))
+        self.checkBox_diapasons_change_h.setText("")
         self.pushButton_save_diapasons.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
+        self.subWindow_construction_mass.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0441\u0441\u0430 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438", None))
+        self.label_constMass_Mc.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0441", None))
+        self.checkBox_constMass_Mc.setText(QCoreApplication.translate("MainWindow", u"- \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u0430\u044f", None))
+        self.label_constMass_M.setText(QCoreApplication.translate("MainWindow", u"\u041c", None))
+        self.checkBox_constMass_M.setText(QCoreApplication.translate("MainWindow", u"- \u043d\u0435 \u0444\u0438\u043a\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0430", None))
     # retranslateUi
 
